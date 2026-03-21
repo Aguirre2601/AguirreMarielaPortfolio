@@ -1,14 +1,15 @@
-//next.config.ts: Configura el comportamiento de Next.js (redirecciones, variables de entorno, optimización de imágenes, etc.).
+// next.config.ts
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // Permite importar modelos 3D y assets de Spline como módulos
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(glb|gltf)$/,
-      type: 'asset/resource',
-    })
-    return config
+
+  // Turbopack: maneja .glb y .gltf como archivos de recurso estático
+  // (reemplaza la regla webpack que teníamos antes)
+  turbopack: {
+    rules: {
+      '*.glb':  { loaders: [], as: '*.resource' },
+      '*.gltf': { loaders: [], as: '*.resource' },
+    },
   },
 
   // Optimización de imágenes: dominios externos permitidos

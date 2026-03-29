@@ -8,13 +8,14 @@ export default function HomePage() {
             <ParticleSphere />
 
             {/* Tu contenido encima */}
-            <main className="relative z-10 text-white pointer-events-none">
+            <main className="relative z-10 text-white pointer-events-none ">
 
                 {/* Hero — primera pantalla */}
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8">
                     <h1 className="text-5xl md:text-7xl font-light tracking-widest">
-                        Tu Nombre
+                        Hola soy Mariela
                     </h1>
+                    <h2 className="font-light tracking-widest">bienvenidos a mi portfolio</h2>
                     <p className="mt-4 text-sm tracking-[0.3em] opacity-40 uppercase">
                         Developer · Designer · Builder
                     </p>

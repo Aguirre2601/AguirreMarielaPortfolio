@@ -11,6 +11,14 @@ html {
 }
 
 @theme {
+    --font-satoshi: var(--font-satoshi), ui-sans-serif, system-ui;
+    --font-tanker: var(--font-tanker), sans-serif;
+    --font-outfit: var(--font-outfit), sans-serif;
+    --font-ArraySemiBold: var(--font-ArraySemiBold);
+    --font-bebas-neue: var(--font-bebas-neue);
+
+
+
   /* Al ponerlos aquí, Tailwind v4 crea automáticamente 
      las clases bg-main-bg, text-main-text, etc. */
   --color-main-bg: #1c1c1c;

@@ -12,11 +12,11 @@ export default function HomePage() {
 
                 {/* Hero — primera pantalla */}
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8">
-                    <h1 className="text-5xl md:text-7xl font-light tracking-widest">
+                    <h1 className="text-5xl md:text-7xl font-outfit tracking-widest">
                         Hola soy Mariela
                     </h1>
-                    <h2 className="font-light tracking-widest">bienvenidos a mi portfolio</h2>
-                    <p className="mt-4 text-sm tracking-[0.3em] opacity-40 uppercase">
+                    <h2 className="tracking-widest font-satoshi">bienvenidos a mi portfolio</h2>
+                    <p className="mt-4 text-sm tracking-[0.3em] opacity-40 uppercase font-bebas-neue">
                         Developer · Designer · Builder
                     </p>
                 </section>

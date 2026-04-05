@@ -25,7 +25,6 @@ export default function Button({
         relative cursor-pointer
         bg-black text-white font-bold
         text-base rounded-[0.8rem]
-        py-[0.4rem] px-[0.8rem]
         border-none
         transition-opacity
         disabled:opacity-50 disabled:cursor-not-allowed 
@@ -37,3 +36,4 @@ export default function Button({
         </button>
     );
 }
+        //py-[0.4rem] px-[0.8rem]

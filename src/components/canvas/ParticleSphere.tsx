@@ -31,9 +31,9 @@ export default function ParticleSphere() {
         renderer.setClearColor(0x000000, 0);
         mount.appendChild(renderer.domElement);
 
-const style = getComputedStyle(document.body);
-const colorAzul = style.getPropertyValue('--color-blue').trim();
-const colorAzulBrillo = style.getPropertyValue('--color-light-blue').trim();
+        const style = getComputedStyle(document.body);
+        const colorAzul = style.getPropertyValue('--color-blue').trim();
+        const colorAzulBrillo = style.getPropertyValue('--color-light-blue').trim();
 
         // ── Partículas ────────────────────────────────────────────
         const positions = new Float32Array(N * 3);

@@ -1,7 +1,6 @@
-
+import './globals.css';
 import type { Metadata } from 'next';
 import Header from "@/components/layout/Header";
-import './globals.css'
 import localFont from 'next/font/local';
 
 const satoshi = localFont({

@@ -1,9 +1,8 @@
 "use client";
+import { useState, useEffect, useRef } from 'react';
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import styles from "./Header.module.css";
 
 // Cada link ahora tiene un "variant" que decide cómo se renderiza
 type NavLink = {
@@ -19,35 +18,51 @@ const navLinks: NavLink[] = [
 ];
 
 export default function Header() {
-    const [visible, setVisible] = useState(true);
-    const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [dark, setDark] = useState(false);
-
-    useEffect(() => {
-        let lastY = window.scrollY;
-        const handleScroll = () => {
-            const currentY = window.scrollY;
-            setVisible(currentY < lastY || currentY < 10);
-            setScrolled(currentY > 10);
-            lastY = currentY;
-        };
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     useEffect(() => {
         document.documentElement.classList.toggle("dark", dark);
     }, [dark]);
 
+    const [visible, setVisible] = useState(true);
+    const [scrolled, setScrolled] = useState(false);
+    const lastY = useRef(0); // Usamos useRef para persistir el valor entre renders
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentY = window.scrollY;
+            
+            // 1. Lógica de visibilidad (solo actualiza si el estado cambia)
+            const isMovingUp = currentY < lastY.current || currentY < 20;
+            if (isMovingUp !== visible) {
+                setVisible(isMovingUp);
+            }
+
+            // 2. Lógica de fondo/sombra (scrolled)
+            const isScrolled = currentY > 20;
+            if (isScrolled !== scrolled) {
+                setScrolled(isScrolled);
+            }
+
+            lastY.current = currentY; // Actualizamos la referencia
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [visible, scrolled]); // Dependencias para que la función vea los estados actuales
+
+
+
+    
     return (
         // Contenedor exterior: ocupa todo el ancho pero solo para posicionar
         <div
-            className={`
-        fixed top-5 left-0 right-0 z-50
+            className={` bg-sky-700
+        fixed  left-0 right-0 z-50
         flex justify-center              
         transition-transform duration-300
-        ${visible ? "translate-y-0" : "-translate-y-full"}
+        ${visible ? "translate-y-5" : "-translate-y-[130%]"}
       `}
         >
             {/* 
@@ -56,8 +71,8 @@ export default function Header() {
       */}
             <header
                 className={`
-                        inline-flex items-center gap-18
-                        px-4 py-3 p-10
+                        inline-flex items-center gap-12
+                        px-6 py-3
                         rounded-full
                         border border-zinc-200 dark:border-zinc-700
                         transition-colors duration-300
@@ -67,25 +82,25 @@ export default function Header() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="font-bold text-lg tracking-tight text-zinc-900 dark:text-white mr-2 p-10"
+                    className="font-bold text-md tracking-tight text-zinc-900 dark:text-white "
                 >
                     AG {/* ← reemplazá con tu nombre/logo */}
                 </Link>
                 <div className="w-px h-5 bg-zinc-700" />
                 {/* Nav — desktop */}
-                <nav className="hidden md:flex items-center gap-18">
+                <nav className="hidden md:flex items-center gap-6 ">
                     {navLinks.map((link) =>
                         link.variant === "magic" ? (
                             // Link con estilo Button magic
-                            <Button key={link.href} className="text-lg py-4 px-8">
-                                <Link href={link.href}>{link.label}</Link>
+                            <Button key={link.href} className="">
+                                <Link href={link.href} >{link.label}</Link>
                             </Button>
                         ) : (
                             // Link normal
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-lg text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors px-4 py-8 "
+                                className="text-lg hover:to-blue-500  text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
                             >
                                 {link.label}
                             </Link>

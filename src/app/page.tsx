@@ -10,6 +10,7 @@ export default function HomePage() {
             {/* Tu contenido encima */}
             <main className="relative z-10 text-white pointer-events-none ">
 
+                
                 {/* Hero — primera pantalla */}
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8">
                     <h1 className="text-5xl md:text-7xl font-outfit tracking-widest">

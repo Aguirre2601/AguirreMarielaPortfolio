@@ -1,165 +1,62 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useTheme } from '@/components/context/ThemeContext';
 
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 
-// Cada link ahora tiene un "variant" que decide cómo se renderiza
-type NavLink = {
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
+
+
+interface NavItem {
     label: string;
     href: string;
     variant: "link" | "magic";
-};
+}
 
-const navLinks: NavLink[] = [
-    { label: "Inicio", href: "#inicio", variant: "link" },
-    { label: "Proyectos", href: "#proyectos", variant: "magic" },
-    { label: "Sobre mí", href: "#sobre-mi", variant: "link" },
+const navItems: NavItem[] = [
+    { label: "Inicio", href: "#", variant: 'link' },
+    { label: "Sobre mí", href: "#", variant: 'link' },
+    { label: "Proyectos", href: "#", variant: 'magic' },
 ];
 
-export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [dark, setDark] = useState(false);
+export default function FloatingHeader() {
+    const isVisible = useScrollDirection();
+    const { isDark, toggleTheme } = useTheme();
 
-    useEffect(() => {
-        document.documentElement.classList.toggle("dark", dark);
-    }, [dark]);
-
-    const [visible, setVisible] = useState(true);
-    const [scrolled, setScrolled] = useState(false);
-    const lastY = useRef(0); // Usamos useRef para persistir el valor entre renders
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentY = window.scrollY;
-            
-            // 1. Lógica de visibilidad (solo actualiza si el estado cambia)
-            const isMovingUp = currentY < lastY.current || currentY < 20;
-            if (isMovingUp !== visible) {
-                setVisible(isMovingUp);
-            }
-
-            // 2. Lógica de fondo/sombra (scrolled)
-            const isScrolled = currentY > 20;
-            if (isScrolled !== scrolled) {
-                setScrolled(isScrolled);
-            }
-
-            lastY.current = currentY; // Actualizamos la referencia
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [visible, scrolled]); // Dependencias para que la función vea los estados actuales
-
-
-
-    
     return (
-        // Contenedor exterior: ocupa todo el ancho pero solo para posicionar
         <div
-            className={` bg-sky-700
-        fixed  left-0 right-0 z-50
-        flex justify-center              
-        transition-transform duration-300
-        ${visible ? "translate-y-5" : "-translate-y-[130%]"}
-      `}
-        >
-            {/* 
-        La "píldora" — no ocupa todo el ancho.
-        inline-flex hace que el ancho se ajuste a su contenido.
-      */}
-            <header
-                className={`
-                        inline-flex items-center gap-12
-                        px-6 py-3
-                        rounded-full
-                        border border-zinc-200 dark:border-zinc-700
-                        transition-colors duration-300
-                        ${scrolled ? "bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm" : "bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm"}
-        `}
-            >
-                {/* Logo */}
-                <Link
-                    href="/"
-                    className="font-bold text-md tracking-tight text-zinc-900 dark:text-white "
-                >
-                    AG {/* ← reemplazá con tu nombre/logo */}
+            className={`fixed top-6 inset-x-0 z-50 flex justify-center transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0"}`} >
+            {/* La "Píldora" - Estilo inspirado en los componentes oficiales de Tailwind */}
+            <header className=" flex items-center gap-7 px-2 py-1 rounded-full border border-border bg-primary backdrop-blur-md shadow-sm text-main-text">
+                <Link href="/" className="font-bold font-ArraySemiBold text-5xl tracking-tight text-main-text p-2 ml-3" >{/* Logo */}
+                    AG
                 </Link>
-                <div className="w-px h-5 bg-zinc-700" />
-                {/* Nav — desktop */}
-                <nav className="hidden md:flex items-center gap-6 ">
-                    {navLinks.map((link) =>
-                        link.variant === "magic" ? (
-                            // Link con estilo Button magic
-                            <Button key={link.href} className="">
-                                <Link href={link.href} >{link.label}</Link>
-                            </Button>
-                        ) : (
-                            // Link normal
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="text-lg hover:to-blue-500  text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-                            >
-                                {link.label}
-                            </Link>
-                        )
-                    )}
-                </nav>
-
-                {/* Separador visual */}
-                <div className="hidden md:block w-px h-4 bg-zinc-200 dark:bg-zinc-700" />
-
-                {/* Dark mode toggle */}
-                <button
-                    onClick={() => setDark(!dark)}
-                    aria-label="Cambiar modo de color"
-                    className="p-1.5 rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-lg"
-                >
-                    {dark ? "☀️" : "🌙"}
-                </button>
-
-                {/* CTA */}
-                <Link
-                    href="#contacto"
-                    className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-lg font-medium hover:opacity-80 transition-opacity"
-                >
-                    Contactame
-                </Link>
-
-                {/* Hamburguesa mobile */}
-                <button
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label="Abrir menú"
-                    className="md:hidden p-1.5 rounded-md text-zinc-600 dark:text-zinc-300"
-                >
-                    {menuOpen ? "✕" : "☰"}
-                </button>
-            </header>
-
-            {/* Menú mobile — debajo de la píldora */}
-            {menuOpen && (
-                <div className="absolute top-14 left-4 right-4 md:hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-2xl px-6 py-4 flex flex-col gap-14 shadow-lg">
-                    {navLinks.map((link) => (
+                <div className="w-px h-5 bg-border" />
+                {navItems.map((item) =>
+                    item.variant === "magic" ? (
+                        <Button key={item.href} className="">
+                            <Link href={item.href}>{item.label}</Link>
+                        </Button>
+                    ) : (
                         <Link
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setMenuOpen(false)}
-                            className="text-lg text-zinc-700 dark:text-zinc-300"
-                        >
-                            {link.label}
+                            key={item.label}
+                            href={item.href}
+                            className="px-3 py-2 text-xl font-medium text-color-main-text transition-colors rounded-full hover:bg-hover "
+                        >   
+                            {item.label}
                         </Link>
                     ))}
-                    <Link
-                        href="#contacto"
-                        onClick={() => setMenuOpen(false)}
-                        className="mt-2 text-center px-4 py-2 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-lg font-medium"
-                    >
-                        Contactame
-                    </Link>
-                </div>
-            )}
+                <div className="w-px h-5 bg-border" />
+                <button onClick={toggleTheme} aria-label="Cambiar modo" className='p-2 rounded-full hover:bg-amber-100/40 transition-colors hover:cursor-pointer'>
+                    {isDark ? "☀️" : "🌙"}
+                </button>
+                <div className="w-px h-5 bg-border" />
+                <Link
+                    href="#contacto"
+                    className="hidden md:inline-flex items-center px-3 py-2 rounded-full bg-olive-200 text-zinc-800 text-xl font-medium hover:opacity-80 transition-opacity mr-3" >       
+                    Contactame
+                </Link>
+            </header>
         </div>
     );
 }

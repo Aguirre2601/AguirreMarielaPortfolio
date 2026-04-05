@@ -8,7 +8,7 @@ export default function HomePage() {
             <ParticleSphere />
 
             {/* Tu contenido encima */}
-            <main className="relative z-10 text-white pointer-events-none ">
+            <main className="relative z-10 pointer-events-none ">
 
                 
                 {/* Hero — primera pantalla */}

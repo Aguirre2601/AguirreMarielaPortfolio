@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Header from "@/components/layout/Header";
 import localFont from 'next/font/local';
+import { ThemeProvider } from "@/components/context/ThemeContext";
 
 const satoshi = localFont({
     src: './fonts/Satoshi-Regular.woff2',
@@ -36,14 +37,19 @@ const outfit = localFont({
 export const metadata: Metadata = {
     title: 'Mariela Aguirre — Portfolio',
     description: 'Portfolio personal',
+    authors: [{ name: 'Mariela Aguirre', url: 'https://marielaaguirre.com' }],
+    keywords: ['portfolio', 'developer', 'designer', 'builder', 'mariela aguirre'],
+    //viewport:{ width: 'device-width', height: 'initial-scale=1.0' }
 }
 
 export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
-        <html lang="es"className={`${satoshi.variable} ${tanker.variable} ${ArraySemiBold.variable} ${bebasNeue.variable} ${outfit.variable}`}>
-            <body className="bg-main-bg text-main-text">
-                <Header/>
-                {children}
+        <html lang="es"className={`${satoshi.variable} ${tanker.variable} ${ArraySemiBold.variable} ${bebasNeue.variable} ${outfit.variable} dark`}>
+            <body className="">
+                <ThemeProvider>
+                    <Header/>
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     )

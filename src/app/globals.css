@@ -1,9 +1,7 @@
 
 @import "tailwindcss";
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /*box-sizing: border-box;*/
+    box-sizing: content-box; 
 }
 
 html {
@@ -21,16 +19,29 @@ html {
     /*Color-------------------------*/
         --color-main-bg: #1c1c1c;
         --color-main-text: #f7f7f7;
+        --color-primary: #6c6c6d83;
+  --color-hover: #cec9c957;
+        --color-border: #e4e4e48c;
         /*ParticleSphere*/
         --color-light-blue: #8fafff;
         --color-blue: #1b51da;
   
 }
 
-/* Configuramos el comportamiento para el modo claro */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-main-bg: #e0e0de;
-    --color-main-text: #111010;
-  }
+:root:not(.dark) {
+  --color-main-bg: #e0e0de;
+  --color-main-text: #111010;
+  --color-border: #7777772a;
+  --color-primary: #c4c4c583;
+  --color-hover: #b1b1b193;
+
+  
+
+  
+}
+
+body {
+  background-color: var(--color-main-bg);
+  color: var(--color-main-text);
+  transition: background-color 0.3s, color 0.3s; /* Para que el cambio sea suave */
 }

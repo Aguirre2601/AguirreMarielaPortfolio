@@ -23,8 +23,8 @@ export default function Button({
             disabled={disabled}
             className={`
         relative cursor-pointer
-        bg-black text-white font-bold
-        text-base rounded-[0.8rem]
+        bg-black text-white font-semibold
+        text-xl py-[0.4rem] px-[0.8rem] rounded-[0.99rem]
         border-none
         transition-opacity
         disabled:opacity-50 disabled:cursor-not-allowed 
@@ -36,4 +36,3 @@ export default function Button({
         </button>
     );
 }
-        //py-[0.4rem] px-[0.8rem]

@@ -142,7 +142,7 @@ export default function ParticleSphere() {
 
         // ── Loop de animación ─────────────────────────────────────
         let animId: number;
-        const clock = new THREE.Clock();
+        const clock = new THREE.Timer();
         const pos = geometry.attributes.position as THREE.BufferAttribute;
         const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
         const mouseWorld = new THREE.Vector3();
@@ -153,8 +153,8 @@ export default function ParticleSphere() {
 
         const animate = () => {
             animId = requestAnimationFrame(animate);
-            const t = clock.getElapsedTime();
-
+            clock.update(); 
+            const t = clock.getElapsed();
             scrollProgress += (targetScroll - scrollProgress) * 0.04;
 
             // Rotación — más lenta en mobile para ahorrar GPU

@@ -11,17 +11,19 @@ export default function HomePage() {
 
             {/* Tu contenido encima */}
             <main className="relative z-10 pointer-events-none ">
-
-                
                 {/* Hero — primera pantalla */}
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8">
-                    <TypewriterHero   />
+                    <TypewriterHero/>
                 </section>
                 <div className='flex flex-col items-center justify-center text-center px-8'>
-                    <p className="tracking-widest font-satoshi max-w-md text-color-border md:text-4xl">
-                        Construyo experiencias digitales que combinan diseño cuidado con
-                    código limpio.
+                    <h2>Desarrollo web con arquitectura analítica</h2>
+                    <p className="tracking-widest font-satoshi max-w-md text-main-text md:text-4xl">
+                        Construyo software priorizando la integridad de los datos y la eficiencia del código para resolver desafíos técnicos complejos
                     </p>
+                    <div>
+                        <button>Trabajemos juntos</button>
+                        <button>Proyectos</button>
+                    </div>
                     <p className="mt-4 tracking-[0.3em] uppercase font-bebas-neue text-white-500 md:text-lg">
                         Developer · Designer · Builder
                     </p>

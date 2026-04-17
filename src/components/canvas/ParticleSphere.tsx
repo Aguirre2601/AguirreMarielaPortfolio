@@ -41,26 +41,32 @@ export default function ParticleSphere() {
         const targets = new Float32Array(N * 3);
 
         for (let i = 0; i < N; i++) {
-            const theta = Math.random() * Math.PI * 2;
-            const phi = Math.acos(2 * Math.random() - 1);
-            const r = 0.85 + Math.random() * 0.15;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    
+    // 1. Aumentamos el radio base (hueco más grande)
+    // 2. Usamos un exponente mayor (n=5) para "pegar" las partículas al borde
+    const n = 2; 
+    const r = 1.2 + Math.pow(Math.random(), n) * 0.5; 
 
-            const x = r * Math.sin(phi) * Math.cos(theta);
-            const y = r * Math.sin(phi) * Math.sin(theta);
-            const z = r * Math.cos(phi);
+    const x = r * Math.sin(phi) * Math.cos(theta);
+    const y = r * Math.sin(phi) * Math.sin(theta);
+    const z = r * Math.cos(phi);
 
-            origins[i * 3] = x;
-            origins[i * 3 + 1] = y;
-            origins[i * 3 + 2] = z;
-            positions[i * 3] = x;
-            positions[i * 3 + 1] = y;
-            positions[i * 3 + 2] = z;
+    origins[i * 3] = x;
+    origins[i * 3 + 1] = y;
+    origins[i * 3 + 2] = z;
 
-            const spread = 3 + Math.random() * 4;
-            targets[i * 3] = x * spread + (Math.random() - 0.5) * 2;
-            targets[i * 3 + 1] = y * spread + (Math.random() - 0.5) * 2;
-            targets[i * 3 + 2] = z * spread + (Math.random() - 0.5) * 2;
-        }
+    // --- SECCIÓN TARGETS (La expansión) ---
+    const spread = 0.2 + Math.random() * 2;
+    
+    // Eliminamos o reducimos drásticamente el ruido aleatorio (-0.5 * 2)
+    // para que mantengan la estructura "hueca" al expandirse
+    const jitter = 0.1; // Ruido muy pequeño
+    targets[i * 3] = x * spread + (Math.random() - 0.5) * jitter;
+    targets[i * 3 + 1] = y * spread + (Math.random() - 0.5) * jitter;
+    targets[i * 3 + 2] = z * spread + (Math.random() - 0.5) * jitter;
+}
 
         const geometry = new THREE.BufferGeometry();
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));

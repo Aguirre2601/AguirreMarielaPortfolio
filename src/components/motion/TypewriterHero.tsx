@@ -47,7 +47,7 @@ export default function TypewriterHero({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="text-base uppercase tracking-widest font-satoshi font-bold"
+                    className="text-base uppercase tracking-widest font-satoshi font-semibold"
                 >
                     Portfolio 2026
                 </motion.span>
@@ -58,13 +58,6 @@ export default function TypewriterHero({
 
                     {/* Contenedor del texto animado */}
                     <span className="relative flex items-baseline">
-                        {/*
-             * AnimatePresence detecta cuándo el texto cambia de longitud
-             * y aplica la animación de entrada/salida del cursor.
-             * Cada letra podría animarse individualmente, pero para el
-             * efecto typewriter el cursor parpadeante es suficiente y
-             * más liviano en rendimiento.
-             */}
                         <motion.span
                             key={displayText}
                             className = "text-violet-500 font-ArraySemiBold"
@@ -91,7 +84,7 @@ export default function TypewriterHero({
 
 
                 {/* Indicadores de palabra actual */}
-                <motion.div
+                { /*  <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
@@ -105,6 +98,9 @@ export default function TypewriterHero({
                                 }`}
                         />
                     ))}
+                </motion.div> */}
+                <motion.div>
+                    <h3 className="mt-5 tracking-[0.3em] uppercase font-satoshi text-main-text md:text-xs font-bold">Full Stack Developer | Data Analyst | Data Science Student </h3>
                 </motion.div>
             </motion.div>
         </section>

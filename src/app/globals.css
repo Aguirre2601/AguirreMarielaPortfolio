@@ -17,7 +17,7 @@ html {
        --font-bebas-neue: var(--font-bebas-neue);
   /* Al ponerlos aquí, Tailwind v4 crea automáticamente las clases bg-main-bg, text-main-text, etc. */
     /*Color-------------------------*/
-        --color-main-bg: #1c1c1c;
+        --color-main-bg: #0B1215;
         --color-main-text: #f7f7f7;
         --color-primary: #6c6c6d83;
         --color-hover: #cec9c957;
@@ -38,6 +38,7 @@ html {
   --color-border: #7777772a;
   --color-primary: #c4c4c583;
   --color-hover: #b1b1b193;
+        --color-turquesa:#7500b8;
 
   
 

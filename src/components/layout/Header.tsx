@@ -12,15 +12,15 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    { label: "Inicio", href: "#", variant: 'link' },
     { label: "Sobre mí", href: "#", variant: 'link' },
+    { label: "Tecnologias", href: "#", variant: 'link' },
     { label: "Proyectos", href: "#", variant: 'magic' },
+    { label: "Formación", href: "#", variant: 'link' },
 ];
 
 export default function FloatingHeader() {
     const isVisible = useScrollDirection();
-    const { isDark, toggleTheme } = useTheme();
-    // 👇 Nuevo: estado para el menú móvil
+    //const { isDark, toggleTheme } = useTheme(); 
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
@@ -28,11 +28,11 @@ export default function FloatingHeader() {
             className={`fixed top-6 inset-x-0 z-50 flex justify-center transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0"}`}>
 
             {/* ── PÍLDORA PRINCIPAL (idéntica al diseño actual en desktop) ── */}
-            <header className="flex items-center gap-7 px-2 py-1 rounded-full border border-border bg-primary backdrop-blur-md shadow-sm text-main-text">
+            <header className="flex items-center gap-7 px-2 py-1 rounded-full border border-border bg-primary backdrop-blur-md shadow-sm ">
 
                 {/* Logo — sin cambios */}
-                <Link href="/" className="font-bold font-ArraySemiBold text-4xl tracking-tight text-main-text p-2 ml-3">
-                    AG
+                <Link href="/" className=" font-outfit text-2xl tracking-tight p-2 ml-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200  font-bold ">
+                    Aguirre Mariela
                 </Link>
 
                 <div className="w-px h-5 bg-border" />
@@ -48,7 +48,7 @@ export default function FloatingHeader() {
                             <Link
                                 key={item.label}
                                 href={item.href}
-                                className="px-3 py-2 text-xl font-medium text-color-main-text transition-colors rounded-full hover:bg-hover"
+                                className="px-3 py-2 text-xl font-light transition-colors rounded-full hover:bg-hover font-outfit  "
                             >
                                 {item.label}
                             </Link>
@@ -59,7 +59,7 @@ export default function FloatingHeader() {
                 {/* Separador — solo visible en desktop cuando hay nav */}
                 <div className="hidden md:block w-px h-5 bg-border" />
 
-                {/* Theme toggle — sin cambios */}
+                {/* Theme toggle — sin cambios 
                 <button
                     onClick={toggleTheme}
                     aria-label="Cambiar modo"
@@ -68,12 +68,12 @@ export default function FloatingHeader() {
                     {isDark ? "☀️" : "🌙"}
                 </button>
 
-                <div className="w-px h-5 bg-border" />
+                <div className="w-px h-5 bg-border" />*/}
 
                 {/* Contacto — ya tenía hidden md:inline-flex, no se toca */}
                 <Link
                     href="#contacto"
-                    className="hidden md:inline-flex items-center px-3 py-2 rounded-full bg-olive-200 text-zinc-800 text-xl font-medium hover:opacity-80 transition-opacity mr-3"
+                    className="hidden md:inline-flex items-center px-3 py-2 rounded-full bg-olive-200 text-zinc-800 text-xl font-light hover:opacity-80 transition-opacity mr-3 font-outfit"
                 >
                     Contactame
                 </Link>
@@ -124,7 +124,7 @@ export default function FloatingHeader() {
                             key={item.label}
                             href={item.href}
                             onClick={() => setMenuOpen(false)}
-                            className="px-4 py-3 text-xl font-medium text-center text-color-main-text transition-colors rounded-xl hover:bg-hover"
+                            className="px-4 py-3 text-xl font-light text-center text--mi-gradiente transition-colors rounded-xl hover:bg-hover font-outfit"
                         >
                             {item.label}
                         </Link>
@@ -134,7 +134,7 @@ export default function FloatingHeader() {
                 <Link
                     href="#contacto"
                     onClick={() => setMenuOpen(false)}
-                    className="mt-1 px-4 py-3 rounded-xl bg-olive-200 text-zinc-800 text-xl font-medium text-center hover:opacity-80 transition-opacity"
+                    className="mt-1 px-4 py-3 rounded-xl bg-olive-200 text-zinc-800 text-xl font-light text-center hover:opacity-80 transition-opacity font-outfit "
                 >
                     Contactame
                 </Link>

@@ -26,14 +26,14 @@ export function useTypewriter({
     const [wordIndex, setWordIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
 
-    // ✦ Función nueva: calcula la demora real para esta palabra
     const getTypingDelay = useCallback((word: string): number => {
-        const lengthPenalty = word.length * lengthFactor;   // más letras → más lento
-        const jitter = (Math.random() - 0.5) * 2 * speedVariation; // ± variación
-        return Math.max(40, baseTypingSpeed + lengthPenalty + jitter);
-        //              ↑ mínimo de 40ms para que nunca sea instantáneo
-    }, [baseTypingSpeed, speedVariation, lengthFactor]);
+    // Si word es undefined o null, devolvemos una velocidad base por defecto
+    if (!word) return baseTypingSpeed; 
 
+    const lengthPenalty = word.length * lengthFactor;
+    const jitter = (Math.random() - 0.5) * 2 * speedVariation;
+    return Math.max(40, baseTypingSpeed + lengthPenalty + jitter);
+}, [baseTypingSpeed, lengthFactor, speedVariation]);
     useEffect(() => {
         const currentWord = words[wordIndex];
 

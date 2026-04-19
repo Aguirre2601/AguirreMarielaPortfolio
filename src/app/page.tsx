@@ -41,8 +41,8 @@ export default function HomePage() {
                 </section>
                 <div className='py-24 md:pt-40 px-6 md:px-12 lg:px-24 tracking-tight relative' id="servicios">
                     <div className='flex flex-col items-center text-center mb-16'>
-                        <h2 className='text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-outfit font-semibold ' data-aos={isMounted ? "fade-up" : undefined}>Desarrollo web con arquitectura analítica</h2>
-                        <p className="tracking-widest font-satoshi max-w-1/2 md:text-xl mt-5 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>
+                        <h2 className='text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-outfit font-normal ' data-aos={isMounted ? "fade-up" : undefined}>Desarrollo web con arquitectura analítica</h2>
+                        <p className="tracking-widest font-satoshi  font-light max-w-1/2 md:text-xl mt-5 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>
                             Construyo software priorizando la integridad de los datos y la eficiencia del código para resolver desafíos técnicos complejos
                         </p>
                         <div className='flex flex-row items-center gap-2 md:gap-6 relative z-30 justify-center mt-6' data-aos={isMounted ? "fade-up" : undefined}>

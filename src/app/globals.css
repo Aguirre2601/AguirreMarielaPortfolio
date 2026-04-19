@@ -11,24 +11,21 @@ html {
 @theme {
     /*Font-------------------------*/
        --font-satoshi: var(--font-satoshi), ui-sans-serif, system-ui;
-       --font-tanker: var(--font-tanker), sans-serif;
        --font-outfit: var(--font-outfit), sans-serif;
        --font-ArraySemiBold: var(--font-ArraySemiBold);
-       --font-bebas-neue: var(--font-bebas-neue);
   /* Al ponerlos aquí, Tailwind v4 crea automáticamente las clases bg-main-bg, text-main-text, etc. */
     /*Color-------------------------*/
-        --color-main-bg: #0B1215;
-        --color-main-text: #f7f7f7;
+        --color-main-bg: #0B0B0B;
+        --color-main-text: #f3f4f6;
         --color-primary: #6c6c6d83;
         --color-hover: #cec9c957;
         --color-border: #e4e4e48c;
         /*ParticleSphere*/
-        --color-light-blue: #8fafff;
-        --color-blue: #00A1FF;
-        --color-azul: #0000FF;
-        --color-turquesa:#00A1FF;
-        --color-azul-opaco:#5381E6;
-        --color-purple:#5820C7;
+        --color-light-verde: #82f050;/**/
+        --color-verdeLima:#89F336;/**/
+        --color-purple: #A036F3;/**/
+        
+
         
         
 }
@@ -39,11 +36,7 @@ html {
   --color-border: #7777772a;
   --color-primary: #c4c4c583;
   --color-hover: #b1b1b193;
-        --color-turquesa:#7500b8;
 
-  
-
-  
 }
 
 body {

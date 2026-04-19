@@ -18,13 +18,14 @@ interface TypewriterHeroProps {
     pauseAfterDelete?: number;
 }
 
-// ─── Constantes por defecto ───────────────────────────────────────────────────
+// ─── Constantes por defecto 
+// "desarrollando",
+//    "investigando",
+//    "consturyendo",
+//    "innovadondo",
+//    "diseñando",───────────────────────────────────────────────────
 const DEFAULT_WORDS = [
-    "desarrollando",
-    "investigando",
-    "consturyendo",
-    "innovadondo",
-    "diseñando",
+    "Mariela Aguirre."
 ];
 
 // ─── Componente principal ─────────────────────────────────────────────────────
@@ -34,35 +35,36 @@ export default function TypewriterHero({
     const { displayText, wordIndex } = useTypewriter({ words });
 
     return (
-        <section className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
+        <section className="flex min-h-screen flex-col items-right justify-center px-4 text-right">
             {/* Entrada suave de toda la sección */}
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="flex flex-col items-center gap-5"
+                className="flex flex-col items-right gap-5"
             >
                 {/* Etiqueta superior */}
-                <motion.span
+                {/* <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="text-base uppercase tracking-widest font-satoshi font-semibold"
+                    className="text-base uppercase tracking-widest font-outfit font-semibold text-transparent bg-clip-text bg-linear-to-br from-white via-gray-200 to-white "
                 >
-                    Portfolio 2026
-                </motion.span>
+                    Portfolio | Aguirre Mariela
+                </motion.span>*/ }
 
                 {/* Titular principal */}
-                <h1 className="flex flex-wrap items-baseline justify-center gap-x-3 text-5xl font-medium leading-none tracking-tight md:text-7xl">
-                    <span className="text-foreground">Estoy</span>
-
+                <h2 className="flex flex-wrap items-right justify-items-normal gap-x-3 font-normal leading-none tracking-tight md:text-3xl">
+                    <span className="text-foreground font-outfit font-semibold text-transparent bg-clip-text bg-linear-to-br from-white via-gray-300 to-white">Hola, yo soy</span>
+                </h2>
+                <h1 className="flex flex-wrap items-right justify-right gap-x-3 text-5xl font-medium leading-none tracking-tight md:text-7xl">
                     {/* Contenedor del texto animado */}
                     <span className="relative flex items-baseline">
                         <motion.span
                             key={displayText}
-                            className = "text-violet-500 font-ArraySemiBold"
+                            className = "text-purple font-ArraySemiBold"
                             aria-live="polite"
-                            aria-label={`Estoy ${words[wordIndex]}`}
+                            aria-label={`${words[wordIndex]}`}
                         >
                             {displayText}
                         </motion.span>
@@ -80,7 +82,9 @@ export default function TypewriterHero({
                             aria-hidden="true"
                         />
                     </span>
+
                 </h1>
+
 
 
                 {/* Indicadores de palabra actual */}
@@ -100,7 +104,7 @@ export default function TypewriterHero({
                     ))}
                 </motion.div> */}
                 <motion.div>
-                    <h3 className="mt-5 tracking-[0.3em] uppercase font-satoshi text-main-text md:text-xs font-bold">Full Stack Developer | Data Analyst | Data Science Student </h3>
+                    <h3 className="mt-5 tracking-[0.3em] px-1 py-0.7 uppercase md:text-base font-normal font-outfit backdrop-blur-2xl backdrop-brightness-75 text-transparent bg-clip-text bg-linear-to-br from-white via-gray-200 to-white ">Full Stack Developer | Data Analyst | Data Science Student </h3>
                 </motion.div>
             </motion.div>
         </section>

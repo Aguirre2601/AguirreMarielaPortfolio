@@ -46,8 +46,8 @@ export default function ParticleSphere() {
     
     // 1. Aumentamos el radio base (hueco más grande)
     // 2. Usamos un exponente mayor (n=5) para "pegar" las partículas al borde
-    const n = 2; 
-    const r = 1.2 + Math.pow(Math.random(), n) * 0.5; 
+    const n = 0.5; 
+    const r = 0.7 + Math.pow(Math.random(), n) * 0.4; 
 
     const x = r * Math.sin(phi) * Math.cos(theta);
     const y = r * Math.sin(phi) * Math.sin(theta);
@@ -66,6 +66,7 @@ export default function ParticleSphere() {
     targets[i * 3] = x * spread + (Math.random() - 0.5) * jitter;
     targets[i * 3 + 1] = y * spread + (Math.random() - 0.5) * jitter;
     targets[i * 3 + 2] = z * spread + (Math.random() - 0.5) * jitter;
+            
 }
 
         const geometry = new THREE.BufferGeometry();

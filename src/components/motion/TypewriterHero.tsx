@@ -2,6 +2,7 @@
 import { useTypewriter } from "@/hooks/use-type-writer";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Button from "@/components/ui/Button";
 
 
 // ─── Tipos ───────────────────────────────────────────────────────────────────
@@ -54,8 +55,8 @@ export default function TypewriterHero({
                 </motion.span>*/ }
 
                 {/* Titular principal */}
-                <h2 className="flex flex-wrap items-right justify-items-normal gap-x-3 font-normal leading-none tracking-tight md:text-3xl">
-                    <span className="text-foreground font-outfit font-semibold text-transparent bg-clip-text bg-linear-to-br from-white via-gray-300 to-white">Hola, yo soy</span>
+                <h2 className="flex flex-wrap items-right justify-items-normal gap-x-3 font-normal leading-none tracking-tight md:text-3xl backdrop-blur-sm backdrop-brightness-75  rounded-xl w-fit">
+                    <span className="text-foreground font-outfit font-semibold text-transparent bg-clip-text bg-linear-to-br from-white via-gray-300 to-white  px-2 py-1">Hola, yo soy</span>
                 </h2>
                 <h1 className="flex flex-wrap items-right justify-right gap-x-3 text-5xl font-medium leading-none tracking-tight md:text-7xl">
                     {/* Contenedor del texto animado */}
@@ -104,7 +105,11 @@ export default function TypewriterHero({
                     ))}
                 </motion.div> */}
                 <motion.div>
-                    <h3 className="mt-5 tracking-[0.3em] px-1 py-0.7 uppercase md:text-base font-normal font-outfit backdrop-blur-2xl backdrop-brightness-75 text-transparent bg-clip-text bg-linear-to-br from-white via-gray-200 to-white ">Full Stack Developer | Data Analyst | Data Science Student </h3>
+                    <h3 className="mt-5  tracking-[0.3em] px-2 py-1 uppercase md:text-base font-normal font-outfit backdrop-blur-sm backdrop-brightness-75
+                    text-transparent bg-clip-text bg-linear-to-br from-white via-gray-200 to-white rounded-xl ">Full Stack Developer | Data Analyst | Data Science Student </h3>
+                </motion.div>
+                <motion.div className="bg-gray-100/95 text-black rounded-xl text-lg md:text-sm flex flex-col items-center w-fit px-4 py-2 tracking-[0.3em] font-semibold font-outfit border border-gray-200/50">
+                    <p>Disponible para trabajar</p>
                 </motion.div>
             </motion.div>
         </section>

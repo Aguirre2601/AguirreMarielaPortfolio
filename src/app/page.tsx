@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "motion/react";
 import ButtonEstrella from "@/components/ui/Buttons/ButtonEstrella";
 import ButtonMinimalist from "@/components/ui/Buttons/ButtonMinimalist";
 import Grid from "@/components/ui/Grid/Grid";
+import GlowText from "@/components/ui/GlowText";
 
 
 export default function HomePage() {
@@ -54,8 +55,8 @@ export default function HomePage() {
                     <Grid/>
                 </div>
                 {/* Segunda sección — acá la esfera ya está dispersa */}
-                <section className="h-screen flex items-center justify-center">
-                    <h2 className="text-3xl font-light opacity-70">Sobre mí</h2>
+                <section className="h-screen flex items-center justify-center"><GlowText text="Sobre mí 1" />
+                    <h2 className="text-3xl font-light opacity-70"></h2>
                 </section>
                 <section className="h-screen flex items-center justify-center">
                     <h2 className="text-3xl font-light opacity-70">Sobre mí 2</h2>

@@ -14,10 +14,10 @@ interface NavItem {
 
 const navItems: NavItem[] = [
     { label: "Sobre mí", href: "#", variant: 'link' },
-    { label: "Tecnologias", href: "#", variant: 'link' },
+    { label: "Tecnologías", href: "#", variant: 'link' },
     { label: "Proyectos", href: "#", variant: 'link' },
     { label: "Formación", href: "#", variant: 'link' },
-    { label: "Contactame", href: "#", variant: 'link' },
+    { label: "Contáctame", href: "#", variant: 'link' },
 ];
 
 export default function FloatingHeader() {
@@ -35,7 +35,7 @@ export default function FloatingHeader() {
 
                 <div className="w-px h-5 bg-border" />
 
-                <nav className="hidden md:flex items-center gap-7">
+                <nav className="hidden md:flex items-center gap-6">
                     {navItems.map((item, index) => {
                         const isLast = index === navItems.length - 1;
                         return (
@@ -49,7 +49,7 @@ export default function FloatingHeader() {
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className="px-3 py-2 text-xl font-light transition-colors rounded-full hover:bg-hover font-outfit"
+                                        className="px-3 py-2 text-xl transition-colors rounded-full hover:bg-hover font-satoshi font-normal"
                                     >
                                         {item.label}
                                     </Link>

@@ -39,7 +39,6 @@ export default function FloatingHeader() {
                     {navItems.map((item, index) => {
                         const isLast = index === navItems.length - 1;
                         return (
-                            // Usamos React.Fragment para devolver dos elementos hermanos sin crear un <div> extra
                             <React.Fragment key={item.label}>
                                 {isLast && <div className="w-px h-5 bg-border" />}
                                 {item.variant === "magic" ? (

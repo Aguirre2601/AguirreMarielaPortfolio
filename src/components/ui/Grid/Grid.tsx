@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import GlowText from '../GlowText';
 import SvgGrid from './SvgGrid';
-import ImgFrontend from '@/constants/ImgFrontend';
 import {ImgBackend} from '@/constants/ImgBackend';
+import {ImgFrontend} from '@/constants/ImgFrontend';
+import {ImgTools} from '@/constants/ImgTool';
 
 export default function Grid() {
     const [isMounted, setIsMounted] = useState(false);
@@ -32,6 +33,7 @@ export default function Grid() {
 
             <div className="row-span-2 rounded-xl p-2 md:p-6 bg-linear-65 to-mauve-950 from-neutral-900 border border-neutral-800 " data-aos={isMounted ? "fade-up" : undefined}>
                 <h2 className="text-base md:text-3xl m-2 font-semibold font-satoshi  flex flex-row   text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100">Lenguajes de <GlowText text="Frontend" /></h2> 
+                <SvgGrid images={ImgFrontend}/>
             </div>
 
             <div className="row-span-2  rounded-xl p-2 md:p-6 bg-linear-65 to-mauve-950 from-neutral-900 border border-neutral-800 " data-aos={isMounted ? "fade-up" : undefined}>
@@ -43,8 +45,8 @@ export default function Grid() {
                 <span className="text-slate-400">FOTO</span>
             </div>
             <div className="col-span-2 bg-linear-to-r from-violet-600 to-indigo-600 rounded-xl p-6" data-aos={isMounted ? "fade-up" : undefined}>
-                <h3 className="text-white">Proyecto Destacado 3</h3>
-                <p className="text-white/80 text-xs">Ocupo el espacio de dos cuadrantes.3</p>
+                <h2 className="text-base md:text-3xl m-2 font-semibold font-satoshi  flex flex-row   text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100">Mis  <GlowText text="Tools" /></h2> 
+                <SvgGrid images={ImgTools} />
             </div>
 
         </div>

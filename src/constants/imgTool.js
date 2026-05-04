@@ -1,3 +1,22 @@
-export default ImgTool  = [
-    {id: 1, src:'', alt:''},
+export const ImgTools = [
+    {id: 1, src:'./Tools/canva.svg', alt:'Canva'},
+    {id: 2, src:'./Tools/clickup.svg', alt:'ClickUp'},
+    {id: 3, src:'./Tools/docker.svg', alt:'Docker'},
+    {id: 4, src:'./Tools/framer_dark.svg', alt:'Framer'},
+    {id: 5, src:'./Tools/gdsc.svg', alt:'Comunidad de Desarrolladores de Google'},
+    {id: 6, src:'./Tools/github_dark.svg', alt:'GitHub'},
+    {id: 7, src:'./Tools/gitlab.svg', alt:'GitLab'},
+    {id: 8, src:'./Tools/google_ads-icon.svg', alt:'Google Ads'},
+    {id: 9, src:'./Tools/Google_Colaboratory (1).svg', alt:'Google Colaboratory'},
+    {id: 10, src:'./Tools/kubernetes.svg', alt:'Kubernetes'},
+    {id: 11, src:'./Tools/motion.svg', alt:'Motion'},
+    {id: 12, src:'./Tools/npm-wordmark.svg', alt:'npm'},
+    {id: 13, src:'./Tools/prisma_dark.svg', alt:'Prisma'},
+    {id: 14, src:'./Tools/SISS.svg', alt:'SISS'},
+    {id: 15, src:'./Tools/trello.svg', alt:'Trello'},
+    //{id: 16, src:'./Tools/SISS.webp', alt:'SISS'},
+    
+    {id: 17, src:'./Frameworks/laravel.svg', alt:'Laravel'},
+    {id: 18, src:'./Frameworks/nestjs.svg', alt:'NestJS'},
+    {id: 19, src:'./Frameworks/nextjs_icon_dark.svg', alt:'NextJS'},
 ];

@@ -85,14 +85,14 @@ export default function SvgGrid({ images = [] }: SvgGridProps) {
             className={`grid ${colClass} gap-px svg-row`}
             style={{
               animationDelay: `${rowIndex * 0.1}s`,
-              gap: "2px",
+              gap: "1em",
             }}
           >
             {/* Cambiamos 'src' por 'image' para acceder a sus propiedades */}
             {row.map((image) => (
               <div
                 key={image.id} // Usamos el ID del objeto como key
-                className="svg-cell relative flex items-center justify-center bg-white rounded-sm overflow-hidden aspect-square"
+                className="svg-cell relative flex items-center justify-center bg-transparent rounded-sm overflow-hidden aspect-square"
               >
                 <Image
                   src={image.src} // Ruta desde el objeto

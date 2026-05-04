@@ -11,9 +11,7 @@ function GlowWord({ word }) {
   const [hovered, setHovered] = useState(true);
 
   return (
-    <span
-      onMouseEnter={() => setHovered(false)}
-      onMouseLeave={() => setHovered(true)}
+    <span onMouseEnter={() => setHovered(false)}  onMouseLeave={() => setHovered(true)}
       className={hovered ? "glow-word--active" : "glow-word"}
     >
       {word}
@@ -44,9 +42,9 @@ export default function GlowText({ text = "" }) {
         .glow-word--active {
           background-image: linear-gradient(
             70deg,
-            #89F336, #6AE00D,
-            #AAF66E,
-            #6AE00D, #89F336
+           #D9D9D9, #B5B5B5,#AEAEAE,
+            #FFFFFF,#AEAEAE,
+            #B5B5B5, #D9D9D9
           );
           background-size: 300% 100%;
           -webkit-background-clip: text;
@@ -55,9 +53,9 @@ export default function GlowText({ text = "" }) {
           color: transparent;
           animation: gradientShift 6.5s linear infinite;
           filter:
-            drop-shadow(0 0 0px  #36F3A0)
-            drop-shadow(0 0 10px #6AE00D)
-            drop-shadow(0 0 24px #89F336);
+            drop-shadow(0 0 0px  #FFFFFF)
+            drop-shadow(0 0 7px #AEAEAE)
+            drop-shadow(0 0 20px #D9D9D9);
         }
       `}</style>
 

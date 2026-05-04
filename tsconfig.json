@@ -35,7 +35,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "vitest.config.ts",
-    ".next/dev/types/**/*.ts", "src/components/ui/GlowWord.jsx",
+    ".next/dev/types/**/*.ts", "src/components/ui/GlowWord.jsx", "src/components/ui/Grid/SvgGrid.tsx",
   ],
   "exclude": [
     "node_modules"

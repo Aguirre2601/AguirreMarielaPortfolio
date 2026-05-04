@@ -1,23 +1,18 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
+import Image from 'next/image'; // Importamos el componente de Next.js
 
-/**
- * SvgGrid
- * Props:
- *  - images: string[]  → lista de rutas/URLs de archivos .svg
- *
- * La grilla se calcula automáticamente según la cantidad de imágenes:
- *   1        → 1×1
- *   2–4      → 2×2
- *   5–9      → 3×3
- *   10–16    → 4×4
- *   17–25    → 5×5
- *   26+      → 6 columnas (filas variables)
- *
- * Cada fila se desplaza horizontalmente de izquierda a derecha (animación CSS).
- * Hover: la celda "salta hacia afuera" y los bordes se iluminan en purple.
- */
+interface ImageData {
+  id: number;
+  src: string;
+  alt: string;
+}
 
-const getColumns = (count) => {
+interface SvgGridProps {
+  images: ImageData[]; 
+}
+
+
+const getColumns = (count : number) => {
   if (count <= 1) return 1;
   if (count <= 4) return 2;
   if (count <= 9) return 3;
@@ -26,20 +21,17 @@ const getColumns = (count) => {
   return 6;
 };
 
-export default function SvgGrid({ images = [] }) {
+export default function SvgGrid({ images = [] }: SvgGridProps) {
   const columns = useMemo(() => getColumns(images.length), [images.length]);
 
-  // Estilos inline necesarios para la animación (Tailwind no soporta keyframes dinámicos)
   const styles = `
     @keyframes slideRow {
       0%   { transform: translateX(-100%); }
       100% { transform: translateX(0); }
     }
-
     .svg-row {
       animation: slideRow 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
-
     .svg-cell {
       border: 0.5px solid #d1d5db;
       transition:
@@ -47,7 +39,6 @@ export default function SvgGrid({ images = [] }) {
         box-shadow 0.25s ease,
         border-color 0.25s ease;
     }
-
     .svg-cell:hover {
       transform: scale(1.08) translateY(-4px);
       box-shadow:
@@ -58,7 +49,6 @@ export default function SvgGrid({ images = [] }) {
     }
   `;
 
-  // Agrupar imágenes en filas
   const rows = useMemo(() => {
     const result = [];
     for (let i = 0; i < images.length; i += columns) {
@@ -75,7 +65,6 @@ export default function SvgGrid({ images = [] }) {
     );
   }
 
-  // Clases de columnas Tailwind según número de columnas
   const colClass = {
     1: "grid-cols-1",
     2: "grid-cols-2 sm:grid-cols-2",
@@ -92,33 +81,34 @@ export default function SvgGrid({ images = [] }) {
       <div className="w-full overflow-hidden">
         {rows.map((row, rowIndex) => (
           <div
-            key={rowIndex}
+            key={`row-${rowIndex}`}
             className={`grid ${colClass} gap-px svg-row`}
             style={{
               animationDelay: `${rowIndex * 0.1}s`,
-              /* gap-px = 4px en Tailwind; lo sobreescribimos a 2px */
               gap: "2px",
             }}
           >
-            {row.map((src, colIndex) => (
+            {/* Cambiamos 'src' por 'image' para acceder a sus propiedades */}
+            {row.map((image) => (
               <div
-                key={`${rowIndex}-${colIndex}`}
+                key={image.id} // Usamos el ID del objeto como key
                 className="svg-cell relative flex items-center justify-center bg-white rounded-sm overflow-hidden aspect-square"
               >
-                <img
-                  src={src}
-                  alt={`svg-${rowIndex * columns + colIndex}`}
-                  className="w-3/4 h-3/4 object-contain pointer-events-none select-none"
+                <Image
+                  src={image.src} // Ruta desde el objeto
+                  alt={image.alt} // Texto alternativo desde el objeto
+                  fill // En Next.js, 'fill' es ideal para contenedores con 'aspect-square'
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                  className="p-4 object-contain pointer-events-none select-none"
                   draggable={false}
                 />
               </div>
             ))}
 
-            {/* Celdas vacías para completar la última fila */}
             {row.length < columns &&
               Array.from({ length: columns - row.length }).map((_, i) => (
                 <div
-                  key={`empty-${i}`}
+                  key={`empty-${rowIndex}-${i}`}
                   className="svg-cell bg-gray-50 rounded-sm aspect-square"
                 />
               ))}

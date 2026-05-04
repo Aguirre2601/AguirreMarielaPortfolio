@@ -39,7 +39,7 @@ export default function HomePage() {
                 </section>
                 <section className="h-screen flex items-center justify-center">
                     <div className='md:pt-40 px-6 md:px-12 lg:px-24 tracking-tight relative' id="Sobre mí">
-                        <Grid />
+                        <Grid/>
                     </div>
                 </section>
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8" id="Services">
@@ -57,6 +57,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </section> 
+
 
                 <section className="h-screen flex items-center justify-center">
                     <h2 className="text-3xl font-light opacity-70">Sobre mí 2</h2>

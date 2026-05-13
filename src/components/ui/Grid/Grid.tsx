@@ -56,7 +56,7 @@ export default function Grid() {
                     ))}
                 </div>
             </div>
-            <div className="col-span-3 rounded-xl p-1 md:p-6 relative z-10  bg-linear-65 to-mauve-950 from-neutral-900 border border-neutral-800  " data-aos={isMounted ? "fade-up" : undefined}>
+            <div className="col-span-3 rounded-xl p-1 md:p-6 relative  bg-linear-65 to-mauve-950 from-neutral-900 border border-neutral-800  " data-aos={isMounted ? "fade-up" : undefined}>
                 <h2 className="text-sm sm:text-xs md:text-3xl m-2 font-semibold font-satoshi  flex flex-row text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 ">Mis  <GlowText text="Tools" /></h2> 
                 
                 <div className="flex flex-wrap gap-1 md:gap-4 mt-1 md:mt-6">

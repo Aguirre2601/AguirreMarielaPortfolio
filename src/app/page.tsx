@@ -33,7 +33,7 @@ export default function HomePage() {
     return (
         <>
             <ParticleSphere />{/* Fondo 3D fijo — detrás de todo */} <ButtonCV />{/* Botón de descarga de CV — siempre visible */}
-            <main className="relative z-5 pointer-events-none ">
+            <main className="relative pointer-events-none ">
                 
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8" id="home">
                     <TypewriterHero />
@@ -43,15 +43,15 @@ export default function HomePage() {
                         <Grid/>
                     </div>
                 </section>
-                <section className="h-screen flex flex-col items-center justify-center text-center px-8" id="Services">
-                    <div className='px-6 md:px-12 lg:px-24 tracking-tight relative'>
-                        <div className='flex flex-col items-center text-center mb-1 md:mb-16 '>
+                <section className="flex flex-col items-center justify-center text-center md:px-8 mt-20" id="Services">
+                    <div className='md:px-12 lg:px-24 tracking-tight relative'>
+                        <div className='flex flex-col items-center text-center mb-3 md:mb-16 '>
                             <h2 className='text-lg md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-satoshi font-normal p-4' data-aos={isMounted ? "fade-up" : undefined}>¿Buscas un perfil profesional que no genere deuda técnica?</h2>
-                            <p className="tracking-widest font-satoshi  font-light max-w-1/2 text-xs md:text-xl mt-1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>Soy una desarrolladora convencida de que <a className="underline decoration-red-500">la eficiencia no está solo en que el código funcione</a>, sino en que sea legible y escalable.
+                            <p className="tracking-widest font-satoshi  font-light max-w-11/12 text-xs md:text-xl mt-1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}> <a className="underline decoration-red-500">La eficiencia no está solo en que el código funcione</a>, sino en que sea legible y escalable.
                             </p>
-                            <p className="tracking-widest font-satoshi  font-light max-w-1/2 text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>Utilizo estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de los datos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
-                            <p className="tracking-widest font-satoshi  font-light max-w-1/2 text-xs md:text-xl mt:1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>¿Conversamos sobre cómo puedo fortalecer tu equipo de desarrollo?</p>
-                            <div className='flex flex-col items-center gap-2 relative z-9 justify-center mt-3 md:mt-6 md:flex-row md:gap-6' data-aos={isMounted ? "fade-up" : undefined}>
+                            <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 max-w-11/12 " data-aos={isMounted ? "fade-up" : undefined}>Uso estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de mis proyectos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
+                            <p className="tracking-widest font-satoshi  font-light max-w-11/12 text-xs md:text-xl mt-2 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>¿Conversamos sobre cómo puedo fortalecer tu equipo de desarrollo?</p>
+                            <div className='flex flex-col items-center gap-2 relative z-9 justify-center mt-3 md:mt-6 md:flex-row md:gap-6 ' data-aos={isMounted ? "fade-up" : undefined}>
                                 <a href="#Contacto"> <ButtonMinimalist /> </a>
                                 <a href="#Proyectos"><ButtonEstrella children="Explora mis proyectos . . ." /> </a>
                             </div>

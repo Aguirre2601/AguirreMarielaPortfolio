@@ -21,13 +21,10 @@ html {
         --color-hover: #cec9c957;
         --color-border: #e4e4e48c;
         /*ParticleSphere*/
-        --color-light-verde: #82f050;/**/
-        --color-verdeLima:#89F336;/**/
-        --color-purple: #A036F3;/**/
-        
+        --color-light-verde:#82f050;
+        --color-verdeLima:#89F336;
+        --color-purple:#A036F3;
 
-        
-        
 }
 
 :root:not(.dark) {

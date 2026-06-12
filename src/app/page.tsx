@@ -9,6 +9,7 @@ import ButtonEstrella from "@/components/ui/Buttons/ButtonEstrella";
 import ButtonMinimalist from "@/components/ui/Buttons/ButtonMinimalist";
 import ButtonCV from "@/components/ui/Buttons/ButtonCV";
 import Grid from "@/components/ui/Grid/Grid";
+import {RealEstateCard} from "@/components/ui/Cards/RealCard";
 
 
 export default function HomePage() {
@@ -33,13 +34,13 @@ export default function HomePage() {
     return (
         <>
             <ParticleSphere />{/* Fondo 3D fijo — detrás de todo */} <ButtonCV />{/* Botón de descarga de CV — siempre visible */}
-            <main className="relative pointer-events-none ">
+            <main className="relative z-3 pointer-events-none ">
                 
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8" id="home">
                     <TypewriterHero />
                 </section>
                 <section className="flex items-center justify-center">
-                    <div className='md:pt-40 px-6 md:px-12 lg:px-24 tracking-tight relative' id="Sobre mí">
+                    <div className='md:pt-40 px-6 md:px-12 lg:px-24 relative z-2' id="Sobre mí">
                         <Grid/>
                     </div>
                 </section>
@@ -51,7 +52,7 @@ export default function HomePage() {
                             </p>
                             <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 max-w-11/12 " data-aos={isMounted ? "fade-up" : undefined}>Uso estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de mis proyectos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
                             <p className="tracking-widest font-satoshi  font-light max-w-11/12 text-xs md:text-xl mt-2 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>¿Conversamos sobre cómo puedo fortalecer tu equipo de desarrollo?</p>
-                            <div className='flex flex-col items-center gap-2 relative z-9 justify-center mt-3 md:mt-6 md:flex-row md:gap-6 ' data-aos={isMounted ? "fade-up" : undefined}>
+                            <div className='flex flex-col items-center gap-2 relative z-2 justify-center mt-3 md:mt-6 md:flex-row md:gap-6 ' data-aos={isMounted ? "fade-up" : undefined}>
                                 <a href="#Contacto"> <ButtonMinimalist /> </a>
                                 <a href="#Proyectos"><ButtonEstrella children="Explora mis proyectos . . ." /> </a>
                             </div>
@@ -59,9 +60,20 @@ export default function HomePage() {
                     </div>
                 </section> 
 
-
+                <section>
+                        <div className="grid" >
+                            <div className="row-span-1  rounded-xl p-1 md:p-6 bg-linear-65 to-mauve-950 from-neutral-900 border-xl border-neutral-800 h-125 " data-aos={isMounted ? "fade-up" : undefined}>
+                                <div className="w-90 h-85 z-2  relative">
+                                    <RealEstateCard />
+                                </div>
+                            </div>
+                        </div>   
+                </section> 
                 <section className="h-screen flex items-center justify-center">
-                    <h2 className="text-3xl font-light opacity-70">Sobre mí 2</h2>
+                    <h2 className="text-3xl font-light opacity-70">Proyectos</h2>
+                </section>
+                <section className="h-screen flex items-center justify-center">
+                    <h2 className="text-3xl font-light opacity-70">Contacto</h2>
                 </section>
                 <section className="h-screen flex items-center justify-center">
                     <h2 className="text-3xl font-light opacity-70">Sobre mí 3</h2>

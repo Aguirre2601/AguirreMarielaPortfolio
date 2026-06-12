@@ -4,6 +4,10 @@ import Header from "@/components/layout/Header";
 import localFont from 'next/font/local';
 import { ThemeProvider } from "@/components/context/ThemeContext"; 
 import { AosProvider } from "@/hooks/AosProvider";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const viewport: Viewport = {
     width: 'device-width',
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
-        <html lang="es"className={`${satoshi.variable} ${ArraySemiBold.variable}`}>
+        <html lang="es"className={cn(satoshi.variable, ArraySemiBold.variable, "font-sans", geist.variable)}>
             <body className="">
                 <head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /></head>
                 <ThemeProvider>

@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 
 import ParticleSphere from '@/components/canvas/ParticleSphere';
 import TypewriterHero from '@/components/motion/TypewriterHero';
-import { motion, AnimatePresence } from "motion/react";
 import ButtonEstrella from "@/components/ui/Buttons/ButtonEstrella";
 import ButtonMinimalist from "@/components/ui/Buttons/ButtonMinimalist";
 import ButtonCV from "@/components/ui/Buttons/ButtonCV";
 import Grid from "@/components/ui/Grid/Grid";
 import {TotalCard} from "@/components/ui/Cards/TotalCard";
+
+
+import {ImgAtelier} from '@/constants/ImgProjects/ImgAtelier'; 
 
 
 export default function HomePage() {
@@ -62,9 +64,15 @@ export default function HomePage() {
 
                 <section>
                         <div className="grid" >
-                            <div className="row-span-1  rounded-xl p-1 md:p-6 bg-linear-65 to-mauve-950 from-neutral-900 border-xl border-neutral-800 h-125 " data-aos={isMounted ? "fade-up" : undefined}>
-                                <div className="w-90 h-85 ">
-                                    <TotalCard />
+                            <div className="row-span-1  rounded-xl p-1 md:p-6 bg-linear-65 to-mauve-950 from-neutral-900 border-xl border-neutral-800 " data-aos={isMounted ? "fade-up" : undefined}>
+                                <div className="w-90 h-auto ">
+                                    <TotalCard 
+                                    listaDeImagenes={ImgAtelier} 
+                                    shadow="hover:border hover:border-lime-500/50 hover:shadow-lg transition-shadow hover:shadow-lime-500/50" 
+                                    textoTitulo="Lirios Atelier"
+                                    textoParrafo1="Desarrollada en .NET Lirios atelier es una Desktop Applications que funciona como un CRUD de clientes, productos y ventas."
+                                    textoParrafo2="C# | .NET | SQL Server | Entity Framework | WPF"
+                                    />
                                 </div>
                             </div>
                         </div>   

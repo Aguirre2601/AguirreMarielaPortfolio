@@ -1,14 +1,7 @@
 import { ImageSwiper } from "@/components/ui/Cards/image-swiper";
 import { Card, CardContent, CardHeader, CardTitle } from "./Card";
 import TextoCorto  from "../Buttons/ButtonTextVisible";
-import { p } from "framer-motion/client";
 
-const images = [
-    './projects/Atelier/Atelier 1.png',
-    './projects/Atelier/Atelier 2.png',
-    './projects/Atelier/Atelier 3.png',
-    './projects/Atelier/Atelier 4.png',
-]
 interface GaleriaProps {
     listaDeImagenes: string[];
     shadow: string;

@@ -91,8 +91,7 @@ export default function HomePage() {
                                     textoTitulo="PRONAFE"
                                     textoParrafo1="Desarrolladora Full Stack en proyecto colaborativo para PRONAFE Argentina. Diseñé e implementé de forma integral el módulo de auditoría y reportes estadísticos de formularios. Alcance técnico: En la capa de backend, programé los modelos, rutas y controladores para el procesamiento y persistencia de estados de aprobación. En la capa frontend, desarrollé las vistas de usuario, integrando grillas dinámicas de datos y componentes gráficos interactivos para el análisis visual de las métricas."
                                     textoParrafo2="Laravel | TypeScript | Tailwind CSS | React| PHP | MySQL"
-                                    GitHub={true}
-                                    linkGitHub="https://github.com/Aguirre2601/Lirios-Atelier"
+                                    GitHub={false}
                                     />
                                 </div>
                                 <div className="w-90 h-auto ">
@@ -100,10 +99,10 @@ export default function HomePage() {
                                     listaDeImagenes={ImgISFDT} 
                                     shadow="hover:border hover:border-sky-800/50 hover:shadow-lg transition-shadow hover:shadow-sky-800/50" 
                                     textoTitulo="ISFDT"
-                                    textoParrafo1="Desarrollada en .NET Lirios atelier es una Desktop Applications que funciona como un CRUD de clientes, productos y ventas."
-                                    textoParrafo2="C# | .NET | SQL Server | Entity Framework | WPF"
+                                    textoParrafo1="Desarrollo individual de un sistema de gestión y autenticación para institutos educativos. Como desarrolladora del proyecto, diseñé la arquitectura lógica de la base de datos e implementé el backend completo aplicando patrones MVC, middlewares de seguridad para el control de accesos y un servicio integrado de correos. Desarrollé los módulos CRUD para la administración de alumnos, profesores, directores y carreras, y diseñé la interfaz de usuario adaptativa enfocada en la visualización eficiente de datos."
+                                    textoParrafo2="PHP | MySQL | WampServer | Tailwind CSS"
                                     GitHub={true}
-                                    linkGitHub="https://github.com/Aguirre2601/Lirios-Atelier"
+                                    linkGitHub="https://github.com/Aguirre2601/InstituteProject"
                                     />
                                 </div>
                                 <div className="w-90 h-auto ">
@@ -111,10 +110,10 @@ export default function HomePage() {
                                     listaDeImagenes={ImgPV} 
                                     shadow="hover:border hover:border-emerald-800/50 hover:shadow-lg transition-shadow hover:shadow-emerald-800/50" 
                                     textoTitulo="Web Plnaeta Verde"
-                                    textoParrafo1="Desarrollada en .NET Lirios atelier es una Desktop Applications que funciona como un CRUD de clientes, productos y ventas."
-                                    textoParrafo2="C# | .NET | SQL Server | Entity Framework | WPF"
+                                    textoParrafo1="Desarrollo individual de un portal web informativo para una ONG ambientalista. Proyecto diseñado bajo los criterios de UX/UI y diseño adaptativo (responsive design). Implementé la maquetación semántica del sitio, la lógica de interactividad mediante JavaScript y la integración de complementos visuales dinámicos para maximizar el engagement y la usabilidad de la plataforma."
+                                    textoParrafo2="CSS | HTML | JS | Boostrap | plugins"
                                     GitHub={true}
-                                    linkGitHub="https://github.com/Aguirre2601/Lirios-Atelier"
+                                    linkGitHub="https://github.com/Aguirre2601/PlanetaVerde-Boostrap_CSS_HTML_PLUINGS"
                                     />
                                 </div>
                                 

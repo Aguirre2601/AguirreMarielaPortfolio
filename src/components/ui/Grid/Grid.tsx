@@ -42,12 +42,11 @@ export default function Grid() {
                 </div>
             </div>
 
-             <GlowCard className="w-3 h-3 p-0.5 sm:w-133 sm:h-110 sm:p-1 md:w-20px md:h-20px md:p-3" > 
+            <GlowCard className="w-3 h-3 p-0.5 sm:w-13 sm:h-10 sm:p-1 md:w-20px md:h-20px md:p-3" > 
                 <div className="bg-transparent rounded-xl p-1 md:p-6  ">
                     <span className="text-slate-400 text-sm sm:text-xs md:text-3xl ">FOTO</span>
-             
-                
-            </div>   </GlowCard>
+                </div>  
+            </GlowCard>
 
             <div className="row-span-1  rounded-xl p-1 md:p-6 bg-linear-65 to-mauve-950 from-neutral-900 border border-neutral-800 " >
                 <h2 className="text-sm sm:text-xs md:text-3xl m-2 font-semibold font-satoshi  flex flex-col min-[1025px]:flex-row  text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100">Lenguajes de <GlowText text="Backend" /></h2> 

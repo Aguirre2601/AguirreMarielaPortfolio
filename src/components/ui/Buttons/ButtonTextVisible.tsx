@@ -12,14 +12,14 @@ function TextoCorto({ texto, limite = 100 }: TextoCortoProps) {
     return (
         <div className="max-w-md">
             <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${mostrarTodo ? "max-h-125" : "max-h-18"
+                className={`overflow-hidden transition-all duration-500 ease-in-out text-xs sm:text-sm md:text-base lg:text-lg ${mostrarTodo ? "max-h-125" : "max-h-18"
                     }`} >
                 <p> {texto} </p>
             </div>
             {esTextoLargo && (
                 <button
                     onClick={() => setMostrarTodo(!mostrarTodo)}
-                    className="mt-4 text-sm font-satoshi text-white bg-gray-200/30 hover:bg-gray-100/50  transition-colors duration-200 ease-in-out px-2 py-1 rounded-full hover:cursor-pointer"
+                    className="mt-1 md:mt-4 text-xs sm:text-sm md:text-sm lg:text-sm font-satoshi text-white bg-gray-200/30 hover:bg-gray-100/50  transition-colors duration-200 ease-in-out px-2 py-1 rounded-full hover:cursor-pointer"
                 >
                     {mostrarTodo ? "Ver menos ↑" : "Ver más ↓"}
                 </button>

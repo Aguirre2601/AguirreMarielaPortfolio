@@ -48,7 +48,8 @@ export default function HomePage() {
             <main className="relative z-3 pointer-events-none ">
                 
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8" id="home">
-                    <TypewriterHero />
+                    <TypewriterHero classname="text-purple font-ArraySemiBold "></TypewriterHero>
+
                 </section>
                 <section className="flex flex-col items-center justify-center text-center md:px-8 mt-20  backdrop-blur-xs" id="Services">
                     <div className='md:px-12 lg:px-24 tracking-tight relative'>

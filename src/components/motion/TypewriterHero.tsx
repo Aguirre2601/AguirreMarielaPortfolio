@@ -17,6 +17,8 @@ interface TypewriterHeroProps {
     pauseAfterType?: number;
     /** Pausa al terminar de borrar (ms) */
     pauseAfterDelete?: number;
+
+    classname?: string
 }
 
 // ─── Constantes por defecto 
@@ -28,10 +30,10 @@ interface TypewriterHeroProps {
 const DEFAULT_WORDS = [
     "Mariela Aguirre."
 ];
+interface classname {
+}
 
-export default function TypewriterHero({
-    words = DEFAULT_WORDS,
-}: TypewriterHeroProps) {
+export default function TypewriterHero({ words = DEFAULT_WORDS , classname }: TypewriterHeroProps ) {
     const { displayText, wordIndex } = useTypewriter({ words });
 
     return (
@@ -51,7 +53,7 @@ export default function TypewriterHero({
                     <span className="relative flex items-baseline">
                         <motion.span
                             key={displayText}
-                            className = "text-purple font-ArraySemiBold"
+                            className = {` ${classname}`}
                             aria-live="polite"
                             aria-label={`${words[wordIndex]}`}
                         >

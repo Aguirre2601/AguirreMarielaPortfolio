@@ -49,17 +49,17 @@ export default function HomePage() {
             <ParticleSphere />{/* Fondo 3D fijo — detrás de todo */} <ButtonCV />{/* Botón de descarga de CV — siempre visible */}
             <main className="relative z-3 pointer-events-none ">
                 <section className="h-screen flex flex-col items-center justify-center text-center px-8" id="home">
-                    <TypewriterHero classname="text-purple font-ArraySemiBold "></TypewriterHero>
+                    <TypewriterHero classname="text-celeste font-ArraySemiBold "></TypewriterHero>
                 </section>
 
                 <section className="flex flex-col items-center justify-center text-center md:px-8 mt-20  backdrop-blur-xs" id="Services">
                     <div className='md:px-12 lg:px-24 tracking-tight relative'>
                         <div className='flex flex-col items-center text-center mb-3 md:mb-16 '>
-                            <h2 className='text-lg md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-satoshi font-normal p-4' data-aos={isMounted ? "fade-up" : undefined}>¿Buscas un perfil profesional que no genere deuda técnica?</h2>
-                            <p className="tracking-widest font-satoshi  font-light max-w-11/12 text-xs md:text-xl mt-1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}> <a className="underline decoration-red-500">La eficiencia no está solo en que el código funcione</a>, sino en que sea legible y escalable.
+                            <h2 className='text-lg md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-satoshi  p-4 font-bold' data-aos={isMounted ? "fade-up" : undefined}>¿Buscas un perfil profesional que no genere deuda técnica?</h2>
+                            <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl mt-1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}> <a className="underline decoration-red-500">La eficiencia no está solo en que el código funcione</a>, sino en que sea legible y escalable.
                             </p>
-                            <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 max-w-11/12 " data-aos={isMounted ? "fade-up" : undefined}>Uso estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de mis proyectos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
-                            <p className="tracking-widest font-satoshi  font-light max-w-11/12 text-xs md:text-xl mt-2 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>¿Conversamos sobre cómo puedo fortalecer tu equipo de desarrollo?</p>
+                            <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100   " data-aos={isMounted ? "fade-up" : undefined}>Uso estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de mis proyectos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
+                            <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl mt-2 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>¿Conversamos sobre cómo puedo fortalecer tu equipo de desarrollo?</p>
                             <div className='flex flex-col items-center gap-2 relative z-2 justify-center mt-3 md:mt-6 md:flex-row md:gap-6 ' data-aos={isMounted ? "fade-up" : undefined}>
                                 <a href="#Contacto"> <ButtonMinimalist /> </a>
                                 <a href="#Proyectos"><ButtonEstrella children="Explora mis proyectos . . ." /> </a>
@@ -74,9 +74,12 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                <section className=" items-center justify-center m-3 mt-50" id="projects">
-                    <h2 className='text-xl md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-satoshi  p-10 text-center font-bold'> Proyectos</h2>
-                    <div className=" rounded-xl bg-linear-65 to-mauve-950 from-neutral-900 border-xl border-neutral-800 grid 
+                <section className="items-center justify-center mt-45 bg-linear-to-b from-transparent to-black" id="projects">
+                    <h2 className='text-lg md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-satoshi  p-4 font-bold text-center' data-aos={isMounted ? "fade-up" : undefined}> Explora mi código</h2>
+                    <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl  text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 text-center " data-aos={isMounted ? "fade-up" : undefined}>Un gran diseño sin un código limpio genera caos.</p> 
+                    <p className="tracking-widest font-satoshi font-light text-xs md:text-xl    text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 text-center" data-aos={isMounted ? "fade-up" : undefined}>Detrás de cada pantalla, estructuro sistemas escalables y eficientes. </p> 
+                    <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 text-center mt-1 mb-19" data-aos={isMounted ? "fade-up" : undefined}>Explora cómo lo logro.</p>
+                    <div className="  grid 
                     grid-cols-2 gap-1 p-0.5
                     sm:grid-cols-3 sm:gap-1.3 sm:p-1 
                     md:grid-cols-3 md:gap-3 md:p-3 
@@ -193,14 +196,32 @@ export default function HomePage() {
                     </div>  
                 </section> 
 
-                <section className="h-screen flex items-center justify-center">
-                    <h2 className="text-3xl font-light opacity-70">Formacion</h2>
+                <section className="h-screen items-center justify-center">
+                    <img src="./pexels-mahmoudramadan-31622908.jpg" alt="" />
                 </section>
                 <section className="h-screen flex items-center justify-center">
                     <h2 className="text-3xl font-light opacity-70">Contacto</h2>
                 </section>
+                    <img src="./pexels-dzmitry-tsikhamirau-2156395575-34201576.jpg" alt="" />
+                    <img src="./pexels-merlin-14032254.jpg" alt="" />
                 <section className="h-screen flex items-center justify-center">
                     <h2 className="text-3xl font-light opacity-70">footer</h2>
+                </section>
+
+                <section  className="relative min-h-screen bg-cover bg-center  flex flex-col justify-center items-center px-4 md:bg-fixed"
+                style={{ backgroundImage: "url('/pexels-mahmoudramadan-31622908.jpg')" }}
+                > 
+                    
+                 
+        {/* Contenido flotante */}
+        <div className="relative z-10 text-center max-w-xl text-white">
+          <h2 className="text-4xl font-bold mb-4 tracking-tight" data-aos={isMounted ? "fade-up" : undefined}>
+            Explora mi código
+          </h2>
+          <p className="text-lg text-slate-300" data-aos={isMounted ? "fade-up" : undefined}>
+            Detrás de cada pantalla hay una estructura al detalle. Explora la lógica limpia y tecnologías que uso para crear sistemas eficientes. ¡Mira mi código!
+          </p>
+        </div>
                 </section>
 
             </main>

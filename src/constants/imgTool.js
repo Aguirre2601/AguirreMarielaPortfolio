@@ -2,7 +2,7 @@ export const ImgTools = [
     {id: 1, src:'./Tools/canva.svg', alt:'Canva'},
     {id: 2, src:'./Tools/clickup.svg', alt:'ClickUp'},
     {id: 3, src:'./Tools/docker.svg', alt:'Docker'},
-    {id: 4, src:'./Tools/framer_dark.svg', alt:'Framer'},
+    {id: 4, src:'./Tools/framer.svg', alt:'Framer'},
     {id: 5, src:'./Tools/gdsc.svg', alt:'Comunidad de Desarrolladores de Google'},
     {id: 6, src:'./Tools/github_dark.svg', alt:'GitHub'},
     {id: 7, src:'./Tools/gitlab.svg', alt:'GitLab'},
@@ -22,6 +22,9 @@ export const ImgTools = [
     {id: 18, src:'./Frameworks/nestjs.svg', alt:'NestJS'},
     {id: 19, src:'./Frameworks/nextjs_icon_dark.svg', alt:'NextJS'},
     {id: 20 , src: './Tools/microsoft-excel.svg', alt: 'Microsoft Excel'},
+
+    {id: 25, src:'./Tools/Semrush.svg', alt:'Semrush'},
+    {id: 26, src:'./Tools/Ubersuggest.svg', alt:'Ubersuggest'},
 
     
 ];

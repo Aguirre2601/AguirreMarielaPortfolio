@@ -1,4 +1,4 @@
-export const ImgTools = [
+export const ImgTool = [
     {id: 1, src:'./Tools/canva.svg', alt:'Canva'},
     {id: 2, src:'./Tools/clickup.svg', alt:'ClickUp'},
     {id: 3, src:'./Tools/docker.svg', alt:'Docker'},

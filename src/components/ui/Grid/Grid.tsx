@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import GlowText from '../GlowText';
 import {ImgBackend} from '@/constants/ImgBackend';
 import {ImgFrontend} from '@/constants/ImgFrontend';
-import {ImgTools} from '@/constants/ImgTool';
+import {ImgTool} from '@/constants/ImgTool';
 import GlowCard from '@/components/ui/Shadows/GlowCard';
 
 export default function Grid() {
@@ -61,7 +61,7 @@ export default function Grid() {
             <div className="col-span-3 rounded-xl p-1 md:p-6   bg-linear-65 to-mauve-950 from-neutral-900 border border-neutral-800  " >
                 <h2 className="text-sm sm:text-xs md:text-3xl m-2 font-semibold font-satoshi  flex flex-row text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 ">Mis  <GlowText text="Tools" /></h2> 
                 <div className="flex flex-wrap gap-1 md:gap-4 mt-1 md:mt-6 ">
-                {ImgTools.map((img, index) => (
+                {ImgTool.map((img, index) => (
                     <GlowCard key={index} className="w-3 h-3 p-0.5 sm:w-15 sm:h-15 sm:p-1 md:w-20px md:h-20px md:p-3" >
                         <img  loading="lazy" src={img.src} alt={img.alt} className="w-full h-full object-contain " />
                     </GlowCard>

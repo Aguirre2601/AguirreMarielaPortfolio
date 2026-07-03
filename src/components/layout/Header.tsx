@@ -27,7 +27,7 @@ export default function FloatingHeader() {
 
     return (
         <div className={`fixed top-6 inset-x-0 z-9 flex justify-center transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-24 opacity-0"}`}>
-            <header className="flex items-center gap-7 px-2 py-1 rounded-full border border-border bg-primary backdrop-blur-md shadow-sm ">
+            <header className="flex items-center gap-7 px-2 py-1  shadow-sm border border-gray-700 rounded-lg  bg-black/50 backdrop-blur-sm ">
                 
                 <Link href="/" className=" font-satoshi text-2xl tracking-tight p-2 ml-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200  font-bold ">
                     Aguirre Mariela
@@ -48,7 +48,7 @@ export default function FloatingHeader() {
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className="px-3 py-2 text-lg transition-colors rounded-full hover:bg-hover font-satoshi"
+                                        className="px-3 py-2 text-lg transition-colors rounded-full hover:underline hover:underline-offset-8 hover:decoration-purple-500 hover:decoration-2 font-satoshi"
                                     >
                                         {item.label}
                                     </Link>

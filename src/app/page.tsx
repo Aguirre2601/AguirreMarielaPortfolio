@@ -78,7 +78,7 @@ export default function HomePage() {
 
                 <section className="items-center justify-center bg-linear-to-b from-transparent to-black" id="projects">
                     <MotionStudio /> 
-                    <h2 className='text-lg md:text-6xl text-transparent bg-clip-text bg-linear-to-br  from-slate-50 via-gray-400 to-slate-100 font-satoshi p-5 font-bold text-center ' data-aos={isMounted ? "fade-up" : undefined}>  <span className="  ml-2 font-ArraySemiBold">EXPLORA MI CÓDIGO</span></h2>
+                    <h2 className='text-lg md:text-6xl text-transparent bg-clip-text bg-linear-to-br  from-slate-50 via-gray-400 to-slate-100 font-satoshi p-5 font-bold text-center ' data-aos={isMounted ? "fade-up" : undefined}>  <span className="  ml-2 font-ArraySemiBold">EXPLORA MIS PROYECTOS</span></h2>
                     <div className="  grid 
                     grid-cols-2 gap-1 p-0.5
                     sm:grid-cols-3 sm:gap-1.3 sm:p-1 
@@ -199,36 +199,21 @@ export default function HomePage() {
                 <section className="items-center justify-center bg-black" id="education">
                     <EducationTimeline />
                 </section>
-                
-                   
-                    <section className="h-screen items-center justify-center">
-                    <img src="./pexels-mahmoudramadan-31622908.jpg" alt="" />
-                </section>
-                <section className="h-screen flex items-center justify-center">
-                    <h2 className="text-3xl font-light opacity-70">Contacto</h2>
-                </section>
-                    <img src="./pexels-dzmitry-tsikhamirau-2156395575-34201576.jpg" alt="" />
-                    <img src="./pexels-merlin-14032254.jpg" alt="" />
-                <section className="h-screen flex items-center justify-center">
-                    <h2 className="text-3xl font-light opacity-70">footer</h2>
-                </section>
 
-                <section  className="relative min-h-screen bg-cover bg-center  flex flex-col justify-center items-center px-4 md:bg-fixed"
-                style={{ backgroundImage: "url('/pexels-mahmoudramadan-31622908.jpg')" }}
+                <section  className="relative min-h-screen bg-cover bg-center flex flex-col justify-center items-center px-4 md:bg-fixed"
+                style={{ backgroundImage: "url('/pexels-mahmoudramadan-31622908.jpg')" }} id="contact"
                 > 
-                    
-                 
-        {/* Contenido flotante */}
-        <div className="relative z-10 text-center max-w-xl text-white">
-          <h2 className="text-4xl font-bold mb-4 tracking-tight" data-aos={isMounted ? "fade-up" : undefined}>
-            Explora mi código
-          </h2>
-          <p className="text-lg text-slate-300" data-aos={isMounted ? "fade-up" : undefined}>
-            Detrás de cada pantalla hay una estructura al detalle. Explora la lógica limpia y tecnologías que uso para crear sistemas eficientes. ¡Mira mi código!
-          </p>
-        </div>
+                    {/* Contenido flotante */}
+                    <div className="relative z-10 text-center max-w-xl text-white border border-gray-700 rounded-lg p-6 md:p-12 bg-black/50 backdrop-blur-sm">
+                    <h2 className="text-4xl font-bold mb-4 tracking-tight" data-aos={isMounted ? "fade-up" : undefined}>
+                        Contactame 
+                    </h2>
+                    <p className="text-lg text-slate-300" data-aos={isMounted ? "fade-up" : undefined}>
+                        Detrás de cada pantalla hay una estructura al detalle. Explora la lógica limpia y tecnologías que uso para crear sistemas eficientes. ¡Mira mi código!
+                    </p>
+                    </div>
                 </section>
-
+            
             </main>
         </>
     );

@@ -18,11 +18,11 @@ export function TotalCard({ listaDeImagenes, shadow, textoTitulo, textoParrafo1,
             <CardContent className="p-0 ">
                 <ImageSwiper images={listaDeImagenes} className="w-full h-full" />
             </CardContent>
-            <CardHeader className="p-3">
-                <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold">{textoTitulo}</CardTitle>
+            <CardHeader className="p-3 font-satoshi">
+                <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold font-satoshi">{textoTitulo}</CardTitle>
                 { textoParrafo1.length >= 150 ? ( <TextoCorto texto={textoParrafo1} limite={145} /> ) : (<p>{textoParrafo1}</p>)}
-                <p className="mt-1"> <span className="font-bold text-xs sm:text-sm md:text-base lg:text-base">STACK</span> </p>
-                <p className="text-xs sm:text-sm md:text-base lg:text-base"> {textoParrafo2} </p>
+                <p className="mt-1"> <span className="font-bold font-ArraySemiBold text-gray-200 text-xs sm:text-sm md:text-base lg:text-base">STACK</span> </p>
+                <p className="text-xs sm:text-sm md:text-base lg:text-base font-satoshi"> {textoParrafo2} </p>
                 {GitHub && (
                     <div className="grid place-items-end">
                 <div className="relative size-11 p-2" >

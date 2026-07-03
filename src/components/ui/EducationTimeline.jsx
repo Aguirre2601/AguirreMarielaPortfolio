@@ -1,0 +1,119 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+
+// Datos de ejemplo para tu formación (puedes cambiarlos por los tuyos)
+const educationData = [
+  {
+    year: "2024 - 2026",
+    title: "Diseño Multimedial & Motion",
+    institution: "Universidad de Diseño",
+    description: "Especialización en interfaces dinámicas, animaciones web avanzadas y diseño de experiencia de usuario.",
+  },
+  {
+    year: "2023",
+    title: "Front-end Avanzado",
+    institution: "Academia Tech",
+    description: "Desarrollo con React, Next.js, optimización de renderizado y manejo avanzado de librerías de animación como Framer Motion.",
+  },
+  {
+    year: "2021 - 2023",
+    title: "Carrera de Desarrollo Web",
+    institution: "Instituto Tecnológico",
+    description: "Fundamentos sólidos de JavaScript, arquitectura de CSS con Tailwind, bases de datos y maquetación responsiva.",
+  },
+];
+
+export default function EducationTimeline() {
+  const containerRef = useRef(null);
+
+  // 1. Detectamos el progreso de scroll exclusivamente dentro de este contenedor
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"], // Empieza cuando el inicio entra al centro, termina cuando el final llega al centro
+  });
+
+  // 2. Aplicamos un efecto "spring" para que la línea se llene de forma elástica y suave
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    restDelta: 0.001
+  });
+
+  return (
+    <section 
+      ref={containerRef} 
+      className="relative max-w-4xl mx-auto px-4 py-24 bg-black text-white min-h-screen"
+    >
+      {/* Título de la sección usando tu fuente geométrica */}
+      <h2 className="font-ArraySemiBold   md:text-6xl text-center mb-20 uppercase tracking-wider text-lg   text-transparent bg-clip-text bg-linear-to-br  from-slate-50 via-gray-400 to-slate-100  p-5 font-bold  ">
+        Mi Formación
+      </h2>
+
+      <div className="relative">
+        {/* LÍNEA DE FONDO (Gris oscura, fija) */}
+        <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-neutral-800 rounded-full" />
+
+        {/* LÍNEA DE PROGRESO (Blanca, se llena con el scroll) */}
+        <motion.div 
+          className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-white rounded-full origin-top"
+          style={{ scaleY }}
+        />
+
+        {/* CONTENEDOR DE HITOS ACADÉMICOS */}
+        <div className="space-y-40">
+          {educationData.map((item, index) => {
+            // Alternamos si va a la izquierda o derecha en pantallas de computadora
+            const isEven = index % 2 === 0;
+
+            return (
+              <div 
+                key={index} 
+                className={`flex flex-col md:flex-row items-start relative ${
+                  isEven ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Bloque del contenido de la tarjeta */}
+                <motion.div 
+                  className="w-full md:w-2/5 pl-12 md:pl-0 md:px-8"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <div className="bg-neutral-900/50 border border-neutral-800 p-6 rounded-2xl backdrop-blur-sm hover:border-neutral-700 transition-colors">
+                    {/* Año resaltado con tu fuente principal */}
+                    <span className="font-ArraySemiBold text-xl text-neutral-400 block mb-2">
+                      {item.year}
+                    </span>
+                    
+                    {/* Título del estudio */}
+                    <h3 className="font-ArraySemiBold text-2xl text-white uppercase mb-1">
+                      {item.title}
+                    </h3>
+                    
+                    {/* Institución */}
+                    <h4 className="font-satoshi font-medium text-sm text-neutral-400 tracking-wide uppercase mb-3">
+                      {item.institution}
+                    </h4>
+                    
+                    {/* Descripción en Satoshi legible */}
+                    <p className="font-satoshi text-neutral-400 text-sm leading-relaxed font-light">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* El círculo central indicador */}
+                <div className="absolute left-2 md:left-1/2 transform -translate-x-1/2 top-6 z-10">
+                  <div className="w-5 h-5 rounded-full bg-black border-4 border-white shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

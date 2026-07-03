@@ -10,8 +10,9 @@ import ButtonCV from "@/components/ui/Buttons/ButtonCV";
 import Grid from "@/components/ui/Grid/Grid";
 import {TotalCard} from "@/components/ui/Cards/TotalCard";
 
-import GlowText from '@/components/ui/GlowText';
+import GlowText from '@/components/ui/Title/GlowText';
 
+import MotionStudio from '@/components/ui/Title/MotionStudio';
 
 import {ImgAtelier} from '@/constants/ImgProjects/ImgAtelier'; 
 import {ImgPronafe} from '@/constants/ImgProjects/ImgPronafe';
@@ -24,6 +25,7 @@ import {ImgPyE} from '@/constants/ImgProjects/ImgP&E';
 import {ImgRaices} from '@/constants/ImgProjects/ImgRaices';
 import {ImgTutoBit} from '@/constants/ImgProjects/ImgTutoBit';
 
+import EducationTimeline from '@/components/ui/EducationTimeline';
 
 export default function HomePage() {
     const [isMounted, setIsMounted] = useState(false);
@@ -55,7 +57,7 @@ export default function HomePage() {
                 <section className="flex flex-col items-center justify-center text-center md:px-8 mt-20  backdrop-blur-xs" id="Services">
                     <div className='md:px-12 lg:px-24 tracking-tight relative'>
                         <div className='flex flex-col items-center text-center mb-3 md:mb-16 '>
-                            <h2 className='text-lg md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-satoshi  p-4 font-bold' data-aos={isMounted ? "fade-up" : undefined}>¿Buscas un perfil profesional que no genere deuda técnica?</h2>
+                            <h2 className='text-lg md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi  p-4 font-bold' data-aos={isMounted ? "fade-up" : undefined}>¿Buscas un perfil profesional que no genere deuda técnica?</h2>
                             <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl mt-1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}> <a className="underline decoration-red-500">La eficiencia no está solo en que el código funcione</a>, sino en que sea legible y escalable.
                             </p>
                             <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100   " data-aos={isMounted ? "fade-up" : undefined}>Uso estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de mis proyectos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
@@ -69,16 +71,14 @@ export default function HomePage() {
                 </section> 
 
                 <section className="flex items-center justify-center" id='who is me'>
-                    <div className='md:pt-40 px-6 md:px-12 lg:px-24 relative z-2'>
+                    <div className=' px-6 md:px-12 lg:px-24 relative z-2'>
                         <Grid/>
                     </div>
                 </section>
 
-                <section className="items-center justify-center mt-45 bg-linear-to-b from-transparent to-black" id="projects">
-                    <h2 className='text-lg md:text-5xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-200 font-satoshi  p-4 font-bold text-center' data-aos={isMounted ? "fade-up" : undefined}> Explora mi código</h2>
-                    <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl  text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 text-center " data-aos={isMounted ? "fade-up" : undefined}>Un gran diseño sin un código limpio genera caos.</p> 
-                    <p className="tracking-widest font-satoshi font-light text-xs md:text-xl    text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 text-center" data-aos={isMounted ? "fade-up" : undefined}>Detrás de cada pantalla, estructuro sistemas escalables y eficientes. </p> 
-                    <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 text-center mt-1 mb-19" data-aos={isMounted ? "fade-up" : undefined}>Explora cómo lo logro.</p>
+                <section className="items-center justify-center bg-linear-to-b from-transparent to-black" id="projects">
+                    <MotionStudio /> 
+                    <h2 className='text-lg md:text-6xl text-transparent bg-clip-text bg-linear-to-br  from-slate-50 via-gray-400 to-slate-100 font-satoshi p-5 font-bold text-center ' data-aos={isMounted ? "fade-up" : undefined}>  <span className="  ml-2 font-ArraySemiBold">EXPLORA MI CÓDIGO</span></h2>
                     <div className="  grid 
                     grid-cols-2 gap-1 p-0.5
                     sm:grid-cols-3 sm:gap-1.3 sm:p-1 
@@ -120,7 +120,7 @@ export default function HomePage() {
                             <TotalCard 
                             listaDeImagenes={ImgPV} 
                             shadow="hover:border hover:border-emerald-800/50 hover:shadow-lg transition-shadow hover:shadow-emerald-800/50" 
-                            textoTitulo="Web Plnaeta Verde"
+                            textoTitulo="Web Planeta Verde"
                             textoParrafo1="Desarrollo individual de un portal web informativo para una ONG ambientalista. Proyecto diseñado bajo los criterios de UX/UI y diseño adaptativo (responsive design). Implementé la maquetación semántica del sitio, la lógica de interactividad mediante JavaScript y la integración de complementos visuales dinámicos para maximizar el engagement y la usabilidad de la plataforma."
                             textoParrafo2="CSS3 | HTML5 | JS | Boostrap | plugins"
                             GitHub={true}
@@ -196,7 +196,12 @@ export default function HomePage() {
                     </div>  
                 </section> 
 
-                <section className="h-screen items-center justify-center">
+                <section className="items-center justify-center bg-black" id="education">
+                    <EducationTimeline />
+                </section>
+                
+                   
+                    <section className="h-screen items-center justify-center">
                     <img src="./pexels-mahmoudramadan-31622908.jpg" alt="" />
                 </section>
                 <section className="h-screen flex items-center justify-center">

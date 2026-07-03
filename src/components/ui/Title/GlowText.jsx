@@ -42,9 +42,7 @@ export default function GlowText({ text = "" }) {
         .glow-word--active {
           background-image: linear-gradient(
             70deg,
-           #D9D9D9, #B5B5B5,#AEAEAE,
-            #FFFFFF,#AEAEAE,
-            #B5B5B5, #D9D9D9
+            #FFFFFF, #B5B5B5,#D9D9D9, #D9D9D9, #B5B5B5, #FFFFFF
           );
           background-size: 300% 100%;
           -webkit-background-clip: text;

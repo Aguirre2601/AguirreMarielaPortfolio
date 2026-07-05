@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-// Datos de ejemplo para tu formación (puedes cambiarlos por los tuyos)
 const educationData = [
   {
     year: "2024 - 2026",

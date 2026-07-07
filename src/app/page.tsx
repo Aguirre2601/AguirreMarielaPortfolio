@@ -60,9 +60,10 @@ export default function HomePage() {
                     <div className='md:px-12 lg:px-24 px-9 tracking-tight relative'>
                         <div className='flex flex-col items-center text-center mb-3 md:mb-16 '>
                             <h2 className=' text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-ArraySemiBold font-bold text-4xl md:text-6xl p-6 text-center' data-aos={isMounted ? "fade-up" : undefined}>¿Buscas un perfil profesional que no genere deuda técnica?</h2>
-                            <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl mt-1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}> <a className="underline decoration-red-500">La eficiencia no está solo en que el código funcione</a>, sino en que sea legible y escalable.
+                            <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl mt-1 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>Soy una desarrolladora Full Stack de Argentina, Técnica Analista Programadora en Desarrollo de Aplicaciones y <a className="underline decoration-red-500">actual estudiante de la Licenciatura en Ciencia de Datos.</a> 
                             </p>
-                            <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100   " data-aos={isMounted ? "fade-up" : undefined}>Uso estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de mis proyectos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
+                            <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100   " data-aos={isMounted ? "fade-up" : undefined}>Cuento con experiencia práctica en la arquitectura backend con <a className="underline decoration-blue-500">C#</a> y el desarrollo frontend moderno con <a className="underline decoration-violet-700">React</a> y <a className="underline decoration-sky-500">TypeScript</a>.  
+                            </p>
                             <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl mt-2 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>¿Conversamos sobre cómo puedo fortalecer tu equipo de desarrollo?</p>
                             <div className='flex flex-col items-center gap-2 relative z-2 justify-center mt-3 md:mt-6 md:flex-row md:gap-6 ' data-aos={isMounted ? "fade-up" : undefined}>
                                 <a href="#Contact"> <ButtonMinimalist /> </a>
@@ -236,7 +237,8 @@ export default function HomePage() {
                             <div className=" items-center justify-center mt-2 grid grid-cols-2 lg:grid-cols-4 ">
                                 {ImgJobs.map((img, index) => (
                                 <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
-                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
+                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white"
+                                key={index}>
                                     <img
                                     src={img.src}
                                     alt={img.alt}

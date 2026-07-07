@@ -4,6 +4,7 @@ import {ImgBackend} from '@/constants/ImgBackend';
 import {ImgFrontend} from '@/constants/ImgFrontend';
 import {ImgTool} from '@/constants/ImgTool';
 import GlowCard from '@/components/ui/Shadows/GlowCard';
+import SoftSkill from '@/components/ui/SoftSkill'
 
 export default function Grid() {
     const [isMounted, setIsMounted] = useState(false);
@@ -24,14 +25,29 @@ export default function Grid() {
     }, []);
     return (
         <div className="grid gap-4 grid-cols-3">
-            <div className="col-span-3 p-1 md:p-6 border  border-gray-700 rounded-xl  bg-transparent backdrop-blur-sm " >
+            <div className="col-span-3 md:col-span-2 p-1 md:p-6 border  border-gray-700 rounded-xl  bg-transparent backdrop-blur-sm " >
                 <h2 className="text-sm sm:text-xs md:text-3xl m-0.5 md:m-2 font-semibold text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi  flex flex-col lg:flex-row">Hola! soy<GlowText text="Mariela" /></h2> 
-                <h3 className="text-xs sm:text-xs md:text-2xl m-2 font-medium text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi">Tengo 24 años y vivo en Buenos Aires, Argentina.</h3>
-                <p className="text-xs sm:text-sm md:text-xl m-2 text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi font-normal">Busco entender la lógica detrás de lo que solemos dar por sentado. Combino la investigación constante con una rutina activa: correr, tocar el piano y meditar son mis herramientas para mantener el equilibrio entre mente y cuerpo.</p>
+                <h3 className="text-xs sm:text-xs md:text-2xl m-2 font-medium text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi">Tengo 24 años y soy de Argentina.</h3>
+                <p className="text-xs sm:text-sm md:text-xl m-2 text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi font-normal">A lo largo de mi trayectoria, trabaje con C# en backend e integré de forma robusta React, SQL, PHP y TypeScript.</p>
+                <p className="text-xs sm:text-sm md:text-xl m-2 text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi font-normal">Mi perfil técnico se complementa fuertemente con el diseño UX/UI, maquetación avanzada con HTML, CSS, TailwindCSS y Bootstrap, el uso de frameworks como Laravel, y herramientas esenciales de entorno como Docker y GitHub. </p>
+                <p className="text-xs sm:text-sm md:text-xl m-2 text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi font-normal">Además, cuento con un nivel de inglés B1 que me permite comprender documentación técnica avanzada y colaborar eficazmente en entornos profesionales.</p>
+                <p className="text-xs sm:text-sm md:text-xl m-2 text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi font-normal">Actualmente experimento con Python y proyectos personales, continuando mi capacitación y adquiriendo nuevos conocimientos.</p>
             </div>
+            <GlowCard className="w-3 h-3 p-0.5 sm:w-13 sm:h-10 sm:p-1 md:w-20px md:h-20px md:p-3" > 
+                <div className="bg-transparent rounded-xl p-1 md:p-6  ">
+                    <span className="text-slate-400 text-sm sm:text-xs md:text-3xl ">FOTO</span>
+                </div>  
+            </GlowCard>
 
 
-            <div className="row-span-1 p-1 md:p-6 border  border-gray-700 rounded-xl  bg-transparent backdrop-blur-sm   " >
+            <div className="col-span-3 lg:col-span-2 md:row-span-2 p-1 md:p-6 border  border-gray-700 rounded-xl  bg-transparent backdrop-blur-sm   " >
+                <h2 className="text-sm sm:text-xs md:text-3xl  m-2 font-semibold font-satoshi  flex flex-col min-[1025px]:flex-row  text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100"><span className="  ml-2 font-ArraySemiBold">SOFT SKILL</span></h2> 
+                <div className="flex flex-wrap gap-1 md:gap-4 mt-1 md:mt-6 p-2">
+                    <SoftSkill/>
+                </div>
+            </div> 
+
+            <div className="row-span-1 md:col-span-1 p-1 md:p-6 border  border-gray-700 rounded-xl  bg-transparent backdrop-blur-sm   " >
                 <h2 className="text-sm sm:text-xs md:text-3xl  m-2 font-semibold font-satoshi  flex flex-col min-[1025px]:flex-row  text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100">Lenguajes de <span className="  ml-2 font-ArraySemiBold">  Frontend</span></h2> 
                 <div className="flex flex-wrap gap-1 md:gap-4 mt-1 md:mt-6 p-2">
                     {ImgFrontend.map((img, index) => (
@@ -41,12 +57,6 @@ export default function Grid() {
                     ))}
                 </div>
             </div>
-
-            <GlowCard className="w-3 h-3 p-0.5 sm:w-13 sm:h-10 sm:p-1 md:w-20px md:h-20px md:p-3" > 
-                <div className="bg-transparent rounded-xl p-1 md:p-6  ">
-                    <span className="text-slate-400 text-sm sm:text-xs md:text-3xl ">FOTO</span>
-                </div>  
-            </GlowCard>
 
             <div className="row-span-1  p-1 md:p-6 border  border-gray-700 rounded-xl  bg-transparent backdrop-blur-sm " >
                 <h2 className="text-sm sm:text-xs md:text-3xl m-2 font-semibold font-satoshi  flex flex-col min-[1025px]:flex-row  text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100">Lenguajes de   <span className="  ml-2 font-ArraySemiBold">Backend</span></h2> 
@@ -58,6 +68,7 @@ export default function Grid() {
                     ))}
                 </div>
             </div>
+
             <div className="col-span-3  p-1 md:p-6 border  border-gray-700 rounded-xl  bg-transparent backdrop-blur-sm " >
                 <h2 className="text-sm sm:text-xs md:text-3xl m-2 font-semibold font-satoshi  flex flex-row text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 ">Mis    <span className="  ml-2 font-ArraySemiBold">  Tools</span></h2> 
                 <div className="flex flex-wrap gap-1 md:gap-4 mt-1 md:mt-6 p-2 ">
@@ -67,7 +78,7 @@ export default function Grid() {
                     </GlowCard>
                     ))}
                 </div>
-            </div>
+            </div> 
 
         </div>
     );

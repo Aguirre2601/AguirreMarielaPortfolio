@@ -24,7 +24,8 @@ import {ImgPyE} from '@/constants/ImgProjects/ImgP&E';
 import {ImgRaices} from '@/constants/ImgProjects/ImgRaices';
 import {ImgTutoBit} from '@/constants/ImgProjects/ImgTutoBit';
 
-import EducationTimeline from '@/components/ui/EducationTimeline';
+import EducationTimeline from '@/components/ui/EducationTimeline';  
+import MiSeccionContacto from "@/components/ui/Buttons/MiSeccionContacto";
 
 export default function HomePage() {
     const [isMounted, setIsMounted] = useState(false);
@@ -90,7 +91,7 @@ export default function HomePage() {
                             shadow="hover:border hover:border-green-600/50 hover:shadow-lg transition-shadow hover:shadow-green-600/50" 
                             textoTitulo="Clinica"
                             textoParrafo1="Aplicación web médica desarrollada de forma colaborativa. Implementa la gestión integral (CRUD) de turnos, médicos y pacientes. La solución utiliza React y Tailwind CSS en el client-side, conectándose mediante una API REST a un ecosistema de Supabase, el cual administra la base de datos relacional y el ciclo de vida de la autenticación de usuarios."
-                            textoParrafo2= "React | Tailwind CSS | Supabase | PostgreSQL"
+                            textoParrafo2= "React | Tailwind CSS | Supabase | PostgreSQL | Docker"
                             GitHub={false}
                             />
                         </div>
@@ -100,7 +101,7 @@ export default function HomePage() {
                             shadow="hover:border hover:border-blue-500/50 hover:shadow-lg transition-shadow hover:shadow-blue-500/50" 
                             textoTitulo="PRONAFE"
                             textoParrafo1="Desarrolladora Full Stack en proyecto colaborativo para PRONAFE Argentina. Diseñé e implementé de forma integral el módulo de auditoría y reportes estadísticos de formularios. Alcance técnico: En la capa de backend, programé los modelos, rutas y controladores para el procesamiento y persistencia de estados de aprobación. En la capa frontend, desarrollé las vistas de usuario, integrando grillas dinámicas de datos y componentes gráficos interactivos para el análisis visual de las métricas."
-                            textoParrafo2="Laravel | TypeScript | Tailwind CSS | React| PHP | MySQL"
+                            textoParrafo2="Laravel | TypeScript | Tailwind CSS | React | PHP | MySQL | Docker"
                             GitHub={false}
                             />
                         </div>
@@ -264,11 +265,7 @@ export default function HomePage() {
                                     />
                                 </button>
                             </div>
-                            <p className="text-lg md:text-2xl mb-2 md:mb-4 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center px-2" >
-                                O mi correo electrónico: <a href="mailto:marielaaguirre@example.com" className="text-celeste hover:underline pointer-events-auto text-base sm:text-xl">
-                                    Marielaaguirre610@example.com
-                                </a>
-                            </p>
+                            <MiSeccionContacto/>
                         </div>
 
                         <div className="gap-4 relative z-8 md:col-span-2 flex flex-col justify-start items-center border border-gray-700 rounded-xl bg-black/50 backdrop-blur-lg p-6 md:p-12 m-5 md:m-10 ">

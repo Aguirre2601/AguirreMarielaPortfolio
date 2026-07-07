@@ -23,6 +23,8 @@ import {ImgPV} from '@/constants/ImgProjects/ImgPV';
 import {ImgPyE} from '@/constants/ImgProjects/ImgP&E'; 
 import {ImgRaices} from '@/constants/ImgProjects/ImgRaices';
 import {ImgTutoBit} from '@/constants/ImgProjects/ImgTutoBit';
+import {ImgFondo} from '@/constants/ImgFondo';
+import {ImgJobs} from '@/constants/ImgJobs';
 
 import EducationTimeline from '@/components/ui/EducationTimeline';  
 import MiSeccionContacto from "@/components/ui/Buttons/MiSeccionContacto";
@@ -203,7 +205,7 @@ export default function HomePage() {
 
                 <section
                     className="relative z-10 bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center py-20 px-4"
-                    style={{ backgroundImage: "url('/pexels-mahmoudramadan-31622908.jpg')" }}
+                    style={{ backgroundImage: `url('${ImgFondo[0]?.src}')` }}
                     id="Contact"
                 >
                     <div className="relative z-4 grid grid-cols-1 md:grid-cols-4 text-center items-center justify-center">
@@ -232,38 +234,16 @@ export default function HomePage() {
                                 O comunicate por mis redes sociales.
                             </p>
                             <div className=" items-center justify-center mt-2 grid grid-cols-2 lg:grid-cols-4 ">
+                                {ImgJobs.map((img, index) => (
                                 <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
                                 transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
                                     <img
-                                    src={'/Social_Job/linkedin.svg'}
-                                    alt={'linkedin'}
+                                    src={img.src}
+                                    alt={img.alt}
                                     className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
                                     />
                                 </button>
-                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
-                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
-                                    <img
-                                    src={'/Social_Job/jobicy.svg'}
-                                    alt={'jobicy'}
-                                    className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
-                                    />
-                                </button>
-                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
-                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
-                                    <img
-                                    src={'/Social_Job/indeed.svg'}
-                                    alt={'indeed'}
-                                    className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
-                                    />
-                                </button>
-                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
-                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
-                                    <img
-                                    src={'/Social_Job/infojobs-logo.svg'}
-                                    alt={'infojobs'}
-                                    className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
-                                    />
-                                </button>
+                                ))}
                             </div>
                             <MiSeccionContacto/>
                         </div>

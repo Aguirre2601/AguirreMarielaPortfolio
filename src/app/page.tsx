@@ -201,7 +201,7 @@ export default function HomePage() {
                 </section>
 
                 <section
-                    className="flex z-0 bg-cover bg-center bg-no-repeat h-screen"
+                    className="relative z-10 bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center py-20 px-4"
                     style={{ backgroundImage: "url('/pexels-mahmoudramadan-31622908.jpg')" }}
                     id="Contact"
                 >
@@ -264,8 +264,8 @@ export default function HomePage() {
                                     />
                                 </button>
                             </div>
-                            <p className="text-lg md:text-2xl mb-2 md:mb-4 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center" >
-                                O mi correo electrónico: <a href="mailto:marielaaguirre@example.com" className="text-celeste hover:underline">
+                            <p className="text-lg md:text-2xl mb-2 md:mb-4 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center px-2" >
+                                O mi correo electrónico: <a href="mailto:marielaaguirre@example.com" className="text-celeste hover:underline pointer-events-auto text-base sm:text-xl">
                                     Marielaaguirre610@example.com
                                 </a>
                             </p>

@@ -4,7 +4,7 @@ import Loader from "@/components/ui/Title/Loader";
 
 export default function Footer() {
     return (
-        <footer className="grid grid-cols-1 md:grid-cols-2 bg-black items-center p-5">
+        <footer className="grid grid-cols-1 lg:grid-cols-2 bg-black items-center p-5">
             <Loader /> 
             <div className=" text-center font-satoshi mx-auto px-6 py-12">
                 <span className="text-2xl mb-2 block">✨</span>

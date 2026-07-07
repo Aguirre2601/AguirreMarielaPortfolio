@@ -1,112 +1,78 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Loader = () => {
     return (
         <StyledWrapper>
-            <div className="card">
-                <div className="loader">
-                    <p className="font-satoshi text-9xl pr-4">Se</p>
+            <div className="card w-full flex justify-center items-center min-h-1/2 md:min-h-1/2">
+                {/* Controlamos la altura del loader de forma responsiva con h-12 en móvil y h-32 en escritorio */}
+                <div className="loader h-12 md:h-32 items-center">
+                    <p className="font-satoshi text-3xl sm:text-4xl md:text-7xl pr-2 md:pr-4 m-0 flex items-center">
+                        Se
+                    </p>
                     <div className="words">
-                        <span className="word font-ArraySemiBold text-9xl">Explorador</span>
-                        <span className="word font-ArraySemiBold text-9xl">Creativo</span>
-                        <span className="word font-ArraySemiBold text-9xl">Ingenioso</span>
-                        <span className="word font-ArraySemiBold text-9xl">Cursioso</span>
-                        <span className="word font-ArraySemiBold text-9xl">Motivado</span>
+                        <span className="word font-ArraySemiBold text-3xl sm:text-4xl md:text-7xl">Imaginaitvo</span>
+                        <span className="word font-ArraySemiBold text-3xl sm:text-4xl md:text-7xl">Creativo</span>
+                        <span className="word font-ArraySemiBold text-3xl sm:text-4xl md:text-7xl">Ingenioso</span>
+                        <span className="word font-ArraySemiBold text-3xl sm:text-4xl md:text-7xl">Cursioso</span>
+                        <span className="word font-ArraySemiBold text-3xl sm:text-4xl md:text-7xl">Motivado</span>
                     </div>
                 </div>
             </div>
         </StyledWrapper>
     );
-}
+};
 
 const StyledWrapper = styled.div`
     .card {
-        /* color used to softly clip top and bottom of the .words container */
-        --bg-color: #111;
-        background-color: #000000;
-        padding: 1rem 2rem; 
+        background-color: #000000; 
     }
+    
     .loader {
         color: rgb(124, 124, 124);
         font-family: "Poppins", sans-serif;
         font-weight: 500;
-        font-size: 25px;
-        -webkit-box-sizing: content-box;
         box-sizing: content-box;
-        height: 10rem;
-        padding: 10px 10px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        border-radius: 8px;
+        display: flex; 
     }
 
     .words {
         overflow: hidden;
         position: relative;
+        height: 100%; /* Asegura que tome la altura responsiva (h-12 o h-32) del padre */
     }
+    
     .words::after {
         content: "";
         position: absolute;
         inset: 0;
         background: linear-gradient(
-        #000000 10%,
-        transparent 30%,
-        transparent 70%,
-        #000000 90%
+            #000000 0%,
+            transparent 25%,
+            transparent 75%,
+            #000000 100%
         );
         z-index: 20;
     }
 
     .word {
-        display: block;
-        height: 100%;
-        padding-left: 6px;
+        display: flex;
+        align-items: center; /* Centra el texto verticalmente en móviles */
+        height: 100%; /* Ocupa exactamente el alto disponible */
         color: #956afa;
         animation: spin_4991 15s infinite;
     }
 
     @keyframes spin_4991 {
-        10% {
-        -webkit-transform: translateY(-102%);
-        transform: translateY(-102%);
-        }
-
-        25% {
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%);
-        }
-
-        35% {
-        -webkit-transform: translateY(-202%);
-        transform: translateY(-202%);
-        }
-
-        50% {
-        -webkit-transform: translateY(-200%);
-        transform: translateY(-200%);
-        }
-
-        60% {
-        -webkit-transform: translateY(-302%);
-        transform: translateY(-302%);
-        }
-
-        75% {
-        -webkit-transform: translateY(-300%);
-        transform: translateY(-300%);
-        }
-
-        85% {
-        -webkit-transform: translateY(-402%);
-        transform: translateY(-402%);
-        }
-
-        100% {
-        -webkit-transform: translateY(-400%);
-        transform: translateY(-400%);
-        }
-    }`;
+        10% { transform: translateY(-100%); }
+        25% { transform: translateY(-100%); }
+        35% { transform: translateY(-200%); }
+        50% { transform: translateY(-200%); }
+        60% { transform: translateY(-300%); }
+        75% { transform: translateY(-300%); }
+        85% { transform: translateY(-400%); }
+        100% { transform: translateY(-400%); }
+    }
+`;
 
 export default Loader;

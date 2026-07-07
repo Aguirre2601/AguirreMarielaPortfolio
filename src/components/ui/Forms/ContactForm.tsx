@@ -1,41 +1,41 @@
-import { useState, FormEvent  } from 'react';
+import { useState } from 'react';
 import ButtonMinimalist from "@/components/ui/Buttons/ButtonMinimalist";
 
 export default function ContactForm() {
     // Estados para manejar el proceso de envío y los mensajes
     const [estado, setEstado] = useState("");
     const [enviando, setEnviando] = useState(false);
-    
-  // 2. Añade el tipo FormEvent<HTMLFormElement> al parámetro event
-  const manejarEnvio = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); 
-    setEnviando(true);
-    setEstado("");
 
-    const formulario = event.currentTarget; // En TS es más seguro usar currentTarget
-    const datos = new FormData(formulario);
+    // 2. Añade el tipo FormEvent<HTMLFormElement> al parámetro event
+    const manejarEnvio = async (event: React.SyntheticEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setEnviando(true);
+        setEstado("");
 
-    try {
-      const respuesta = await fetch("https://formspree.io/f/xwvdjvwz", {
-        method: "POST",
-        body: datos,
-        headers: {
-          'Accept': 'application/json'
+        const formulario = event.currentTarget; // En TS es más seguro usar currentTarget
+        const datos = new FormData(formulario);
+
+        try {
+            const respuesta = await fetch("https://formspree.io/f/xwvdjvwz", {
+                method: "POST",
+                body: datos,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (respuesta.ok) {
+                setEstado("success");
+                formulario.reset();
+            } else {
+                setEstado("error");
+            }
+        } catch (error) {
+            setEstado("error");
+        } finally {
+            setEnviando(false);
         }
-      });
-
-      if (respuesta.ok) {
-        setEstado("success");
-        formulario.reset(); 
-      } else {
-        setEstado("error");
-      }
-    } catch (error) {
-      setEstado("error");
-    } finally {
-      setEnviando(false);
-    }
-  };
+    };
     return (
         <div className="w-full max-w-xl mx-auto">
             <form onSubmit={manejarEnvio} className="flex flex-col gap-4">
@@ -66,13 +66,13 @@ export default function ContactForm() {
                     disabled={enviando}
                 />
 
-                <button 
-                    type="submit" 
-                    disabled={enviando} 
+                <button
+                    type="submit"
+                    disabled={enviando}
                     className="px-6 py-3 text-lg rounded-lg border border-purple-600 text-white bg-purple-600/10 hover:bg-purple-600 transition-all font-medium relative z-12 pointer-events-auto w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
+                >
                     {enviando ? "Sending message..." : "Send Message"}
-                </button> 
+                </button>
             </form>
 
             {/* Alertas de Estado estilizadas con Tailwind */}

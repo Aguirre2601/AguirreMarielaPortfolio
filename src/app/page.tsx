@@ -82,13 +82,9 @@ export default function HomePage() {
                 <section className="items-center justify-center bg-linear-to-b from-transparent to-black" id="Projects">
                     <MotionStudio /> 
                     <h2 className='text-transparent bg-clip-text bg-linear-to-br  from-slate-50 via-gray-400 to-slate-100 font-satoshi font-bold text-4xl md:text-6xl p-6 text-center mb-14 ' data-aos={isMounted ? "fade-up" : undefined}>  <span className="font-ArraySemiBold">EXPLORA MIS PROYECTOS</span></h2>
-                    <div className="  grid 
-                    grid-cols-2 gap-1 p-0.5
-                    sm:grid-cols-3 sm:gap-1.3 sm:p-1 
-                    md:grid-cols-3 md:gap-3 md:p-3 
-                    lg:grid-cols-5 lg:gap-4 lg:p-6" 
+                    <div className="flex flex-wrap gap-4 justify-center" 
                     data-aos={isMounted ? "fade-up" : undefined}>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto ">
                             <TotalCard 
                             listaDeImagenes={ImgClinic} 
                             shadow="hover:border hover:border-green-600/50 hover:shadow-lg transition-shadow hover:shadow-green-600/50" 
@@ -98,7 +94,7 @@ export default function HomePage() {
                             GitHub={false}
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto ">
                             <TotalCard 
                             listaDeImagenes={ImgPronafe} 
                             shadow="hover:border hover:border-blue-500/50 hover:shadow-lg transition-shadow hover:shadow-blue-500/50" 
@@ -108,7 +104,7 @@ export default function HomePage() {
                             GitHub={false}
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto ">
                             <TotalCard 
                             listaDeImagenes={ImgISFDT} 
                             shadow="hover:border hover:border-sky-800/50 hover:shadow-lg transition-shadow hover:shadow-sky-800/50" 
@@ -119,7 +115,7 @@ export default function HomePage() {
                             linkGitHub="https://github.com/Aguirre2601/InstituteProject"
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto  ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto  ">
                             <TotalCard 
                             listaDeImagenes={ImgPV} 
                             shadow="hover:border hover:border-emerald-800/50 hover:shadow-lg transition-shadow hover:shadow-emerald-800/50" 
@@ -130,7 +126,7 @@ export default function HomePage() {
                             linkGitHub="https://github.com/Aguirre2601/PlanetaVerde-Boostrap_CSS_HTML_PLUINGS"
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto ">
                             <TotalCard 
                             listaDeImagenes={ImgTutoBit} 
                             shadow="hover:border hover:border-indigo-800/50 hover:shadow-lg transition-shadow hover:shadow-indigo-800/50" 
@@ -141,7 +137,7 @@ export default function HomePage() {
                             linkGitHub="https://github.com/Aguirre2601/BIT-tutOnline"
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto ">
                             <TotalCard 
                             listaDeImagenes={ImgPasteleria} 
                             shadow="hover:border hover:border-orange-500/50 hover:shadow-lg transition-shadow hover:shadow-orange-500/50" 
@@ -152,7 +148,7 @@ export default function HomePage() {
                             linkGitHub="https://github.com/Aguirre2601/pasteleria-CSS-HTML-2"
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto ">
                             <TotalCard 
                             listaDeImagenes={ImgAtelier} 
                             shadow="hover:border hover:border-lime-500/50 hover:shadow-lg transition-shadow hover:shadow-lime-500/50" 
@@ -163,7 +159,7 @@ export default function HomePage() {
                             linkGitHub="https://github.com/Aguirre2601/Lirios-Atelier"
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto  ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto  ">
                             <TotalCard 
                             listaDeImagenes={ImgBVSV} 
                             shadow="hover:border hover:border-red-700/50 hover:shadow-lg transition-shadow hover:shadow-red-700/50" 
@@ -174,7 +170,7 @@ export default function HomePage() {
                             linkGitHub="https://github.com/Aguirre2601/Lirios-Atelier"
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto  ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto  ">
                             <TotalCard 
                             listaDeImagenes={ImgPyE} 
                             shadow="hover:border hover:border-cyan-400/50 hover:shadow-lg transition-shadow hover:shadow-cyan-400/50" 
@@ -185,7 +181,7 @@ export default function HomePage() {
                             linkGitHub="https://github.com/Aguirre2601/Estadistica"
                             />
                         </div>
-                        <div className="w-25 sm:w-40 md:w-75 lg:w-85 h-auto ">
+                        <div className="w-35 sm:w-40 md:w-55 lg:w-85 h-auto ">
                             <TotalCard 
                             listaDeImagenes={ImgRaices} 
                             shadow="hover:border hover:border-amber-50/50 hover:shadow-lg transition-shadow hover:shadow-amber-50/50" 
@@ -204,8 +200,7 @@ export default function HomePage() {
                     <EducationTimeline /> 
                 </section>
 
-                <section
-                    className="relative z-10 bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center py-20 px-4"
+                <section className="relative z-10 bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center py-20 px-4"
                     style={{ backgroundImage: `url('${ImgFondo[0]?.src}')` }}
                     id="Contact"
                 >

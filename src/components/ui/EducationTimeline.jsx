@@ -5,22 +5,34 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const educationData = [
   {
-    year: "2024 - 2026",
-    title: "Diseño Multimedial & Motion",
-    institution: "Universidad de Diseño",
-    description: "Especialización en interfaces dinámicas, animaciones web avanzadas y diseño de experiencia de usuario.",
+    year: "2026",
+    title: "Licenciatura en Ciencia de Datos",
+    institution: "Universidad de la Ciudad de Buenos Aires",
+    description: "Formación especializada en modelos predictivos, estadística avanzada, matemática y computación para transformar datos en decisiones estratégicas.",
   },
   {
-    year: "2023",
-    title: "Front-end Avanzado",
-    institution: "Academia Tech",
-    description: "Desarrollo con React, Next.js, optimización de renderizado y manejo avanzado de librerías de animación como Framer Motion.",
+    year: "2023 - 2026",
+    title: "Analista Programador en Desarrollo de Aplicaciones",
+    institution: "Instituto Superior de Formación Técnica Nº 93",
+    description: "Sólida base en ingeniería de software, arquitectura de bases de datos SQL y lógica de programación aplicable a la ingeniería de datos.",
   },
   {
-    year: "2021 - 2023",
-    title: "Carrera de Desarrollo Web",
-    institution: "Instituto Tecnológico",
-    description: "Fundamentos sólidos de JavaScript, arquitectura de CSS con Tailwind, bases de datos y maquetación responsiva.",
+    year: "2022 - 2023",
+    title: "Medicina",
+    institution: "Facultad de Medicina (UBA)",
+    description: "Estudios universitarios que desarrollaron mi pensamiento analítico y el interés por la investigación y el análisis de problemas complejos.",
+  },
+  {
+    year: "2018 - 2022",
+    title: "CBC de Medicina",
+    institution: "Universidad de Buenos Aires (UBA)",
+    description: "Formación inicial con fuerte foco en ciencias exactas, incluyendo Biofísica, Pensamiento Científico, Química y Análisis Matemático.",
+  },
+  {
+    year: "2019",
+    title: "Bachiller en Economía y Administración",
+    institution: "Nuevo Colegio Glew",
+    description: "Introducción a los conceptos clave de gestión empresarial y análisis financiero.",
   },
 ];
 
@@ -55,7 +67,7 @@ export default function EducationTimeline() {
 
         {/* LÍNEA DE PROGRESO (Blanca, se llena con el scroll) */}
         <motion.div 
-          className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-white rounded-full origin-top"
+          className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-purple-600 rounded-full origin-top"
           style={{ scaleY }}
         />
 

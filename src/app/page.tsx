@@ -10,10 +10,8 @@ import ButtonCV from "@/components/ui/Buttons/ButtonCV";
 import Grid from "@/components/ui/Grid/Grid";
 import {TotalCard} from "@/components/ui/Cards/TotalCard";
 
-import GlowText from '@/components/ui/Title/GlowText';
-
 import MotionStudio from '@/components/ui/Title/MotionStudio';
-import MagicCard from "@/components/ui/cardmagic";
+
 
 import {ImgAtelier} from '@/constants/ImgProjects/ImgAtelier'; 
 import {ImgPronafe} from '@/constants/ImgProjects/ImgPronafe';
@@ -55,7 +53,7 @@ export default function HomePage() {
                     <TypewriterHero classname="text-celeste font-ArraySemiBold "></TypewriterHero>
                 </section>
 
-                <section className="flex flex-col items-center justify-center text-center md:px-8 mt-20  backdrop-blur-xs" id="Services">
+                <section className="flex flex-col items-center justify-center text-center md:px-8 mt-20  backdrop-blur-xs" id="Me">
                     <div className='md:px-12 lg:px-24 px-9 tracking-tight relative'>
                         <div className='flex flex-col items-center text-center mb-3 md:mb-16 '>
                             <h2 className=' text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-ArraySemiBold font-bold text-4xl md:text-6xl p-6 text-center' data-aos={isMounted ? "fade-up" : undefined}>¿Buscas un perfil profesional que no genere deuda técnica?</h2>
@@ -64,20 +62,20 @@ export default function HomePage() {
                             <p className="tracking-widest font-satoshi  font-light text-xs md:text-xl mt-1  md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100   " data-aos={isMounted ? "fade-up" : undefined}>Uso estándares de <a className="underline decoration-violet-700">Clean Code</a> y principios <a className="underline decoration-sky-500">S.O.L.I.D</a> para facilitar el mantenimiento y la integridad de mis proyectos. Mi meta es ser el soporte que ayude al líder a escalar el proyecto <a className="underline decoration-lime-400">sin fricciones técnicas</a>.</p>
                             <p className="tracking-widest font-satoshi  font-light   text-xs md:text-xl mt-2 md:mt-3 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-300 to-gray-100 " data-aos={isMounted ? "fade-up" : undefined}>¿Conversamos sobre cómo puedo fortalecer tu equipo de desarrollo?</p>
                             <div className='flex flex-col items-center gap-2 relative z-2 justify-center mt-3 md:mt-6 md:flex-row md:gap-6 ' data-aos={isMounted ? "fade-up" : undefined}>
-                                <a href="#Contacto"> <ButtonMinimalist /> </a>
-                                <a href="#Proyectos"><ButtonEstrella children="Explora mis proyectos . . ." /> </a>
+                                <a href="#Contact"> <ButtonMinimalist /> </a>
+                                <a href="#Projects"><ButtonEstrella children="Explora mis proyectos . . ." /> </a>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section className="flex items-center justify-center" id='who is me'>
+                <section className="flex items-center justify-center" id='Technologies'>
                     <div className='px-6 md:px-12 lg:px-24 relative z-2'>
                         <Grid/>
                     </div>
                 </section>
 
-                <section className="items-center justify-center bg-linear-to-b from-transparent to-black" id="projects">
+                <section className="items-center justify-center bg-linear-to-b from-transparent to-black" id="Projects">
                     <MotionStudio /> 
                     <h2 className='text-transparent bg-clip-text bg-linear-to-br  from-slate-50 via-gray-400 to-slate-100 font-satoshi font-bold text-4xl md:text-6xl p-6 text-center mb-14 ' data-aos={isMounted ? "fade-up" : undefined}>  <span className="font-ArraySemiBold">EXPLORA MIS PROYECTOS</span></h2>
                     <div className="  grid 
@@ -198,86 +196,110 @@ export default function HomePage() {
                 </section> 
                 
 
-                <section className="flex items-center justify-center bg-black" id="education "> 
+                <section className="flex items-center justify-center bg-black" id="Education"> 
                     <EducationTimeline /> 
                 </section>
 
-                {/* <section className=" flex justify-center items-center w-full  bg-red-500">
-                        <div className="relative w-full max-w-md">
-                            <input 
-                                type="text" 
-                                placeholder="Your full name here." 
-                                className="w-full p-3 rounded-lg bg-green-500 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors relative pointer-events-auto "
-                            />
-                        </div>
-                </section> */}
-                 <section
+                <section
                     className="flex z-0 bg-cover bg-center bg-no-repeat h-screen"
                     style={{ backgroundImage: "url('/pexels-mahmoudramadan-31622908.jpg')" }}
-                    id="Contacto"
+                    id="Contact"
                 >
                     <div className="relative z-4 grid grid-cols-1 md:grid-cols-4 text-center items-center justify-center">
                         <div className="md:col-span-4 bg-transparent pt-0 mb-20">
                             <h1 className="text-4xl md:text-6xl text-center" >
                                 <span className="text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-ArraySemiBold font-bold">
-                                ¿Quieres conocer más sobre mi experiencia?
+                                ¿Queres conocer más sobre mi experiencia?
                                 </span>
                             </h1>
                         </div>
 
-                        <div className="relative z- 8 md:col-span-2 flex flex-col items-center justify-center border rounded-xl border-gray-700 bg-black/50 backdrop-blur-sm p-6 md:p-12 m-5 md:m-10"
+                        <div className="relative z- 8 md:col-span-2 flex flex-col items-center justify-center border rounded-xl border-gray-700 bg-black/50 backdrop-blur-lg p-6 md:p-12 m-5 md:m-10"
                         >
-                            <h2 className="text-4xl font-bold mb-4 tracking-tight font-satoshi" >
-                                Contactame
+                            <h2 className="text-4xl  mb-2 md:mb-8 tracking-tight text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-ArraySemiBold font-bold" >
+                                Contáctame
                             </h2>
-                            <p className="text-lg md:text-2xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center"
+                            <p className="text-lg md:text-2xl mb-2 md:mb-4 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center"
                                 
                             >
                                 Conoce más sobre mi experiencia y habilidades. Estoy disponible para discutir oportunidades de colaboración,
                                 proyectos o cualquier consulta que tengas. ¡No dudes en enviarme un mensaje!
                             </p>
-                            <p className="text-lg md:text-2xl text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center"
+                            <p className="text-lg md:text-2xl mb-2 md:mb-4 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center"
                                 
                             >
-                                O comunicate por mis redes sociales. Estoy abierto a nuevas oportunidades y siempre dispuesta a aprender más.
+                                O comunicate por mis redes sociales.
                             </p>
-                            <a href="#Contacto"><ButtonMinimalist /></a>
-                            
+                            <div className=" items-center justify-center mt-2 grid grid-cols-2 lg:grid-cols-4 ">
+                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
+                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
+                                    <img
+                                    src={'/Social_Job/linkedin.svg'}
+                                    alt={'linkedin'}
+                                    className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
+                                    />
+                                </button>
+                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
+                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
+                                    <img
+                                    src={'/Social_Job/jobicy.svg'}
+                                    alt={'jobicy'}
+                                    className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
+                                    />
+                                </button>
+                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
+                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
+                                    <img
+                                    src={'/Social_Job/indeed.svg'}
+                                    alt={'indeed'}
+                                    className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
+                                    />
+                                </button>
+                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
+                                transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white ">
+                                    <img
+                                    src={'/Social_Job/infojobs-logo.svg'}
+                                    alt={'infojobs'}
+                                    className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
+                                    />
+                                </button>
+                            </div>
+                            <p className="text-lg md:text-2xl mb-2 md:mb-4 text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-satoshi text-center" >
+                                O mi correo electrónico: <a href="mailto:marielaaguirre@example.com" className="text-celeste hover:underline">
+                                    Marielaaguirre610@example.com
+                                </a>
+                            </p>
                         </div>
 
-                        <div className=" relative  z-8 md:col-span-2 flex flex-col items-center justify-center text-center border border-gray-700 rounded-xl bg-black/50 backdrop-blur-sm p-6 md:p-12 m-5 md:m-10"
-                        
-                        >
-                            <h2 className="text-4xl font-bold mb-4 tracking-tight font-satoshi" >
+                        <div className="gap-4 relative z-8 md:col-span-2 flex flex-col justify-start items-center border border-gray-700 rounded-xl bg-black/50 backdrop-blur-lg p-6 md:p-12 m-5 md:m-10 ">
+                            <h2 className="text-4xl tracking-tight text-transparent bg-clip-text bg-linear-to-br from-gray-100 via-gray-400 to-gray-100 font-ArraySemiBold font-bold mb-2"  >
                                 Email
-                            </h2>
-                            <label className="text-white text-sm font-medium">Escribe tu nombre:</label>
+                            </h2> 
                             <input 
                             type="text" 
                             placeholder="Your full name here." 
-                            className="p-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors relative z-12 pointer-events-auto"
+                            className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600  transition-colors relative z-12 pointer-events-auto w-full "
                             />
 
-                            <label className="text-white text-sm font-medium">Escribe email:</label>
+                            
                             <input 
                             type="email" 
                             placeholder="Your email here." 
-                            className="p-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors relative z-12 pointer-events-auto"
+                            className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600  transition-colors relative z-12 pointer-events-auto w-full "
                             />
 
-                            <label className="text-white text-sm font-medium">Escribe tu comentario:</label>
+                            
                             <textarea  
                                 placeholder="Your message here." 
-                                rows={4} // Define la altura inicial en líneas de texto
-                                className="p-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-blue-500 transition-colors resize-y relative z-12 pointer-events-auto"
+                                rows={5} // Define la altura inicial en líneas de texto
+                                className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600  transition-colors relative z-12 pointer-events-auto w-full resize-none"
                             />
+
                             <a href=""><ButtonMinimalist /></a>
+
                         </div>
                     </div>
                 </section>  
-
-
-
             </main>
         </>
     );

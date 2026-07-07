@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import localFont from 'next/font/local';
 import { ThemeProvider } from "@/components/context/ThemeContext"; 
 import { AosProvider } from "@/hooks/AosProvider";
@@ -43,10 +44,13 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="es"className={cn(satoshi.variable, ArraySemiBold.variable, "font-sans", geist.variable)}>
             <body className="">
-                <head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /></head>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+                </head>
                 <ThemeProvider>
                     <Header/>
                     <AosProvider children={children} />
+                    <Footer/>
                 </ThemeProvider>
             </body>
         </html>

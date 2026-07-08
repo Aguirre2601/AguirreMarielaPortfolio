@@ -13,8 +13,8 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
+    //maximumScale: 1,
+    //userScalable: false,
     // Also supported but less commonly used
     // interactiveWidget: 'resizes-visual',
 }
@@ -35,7 +35,7 @@ const ArraySemiBold = localFont({
 export const metadata: Metadata = {
     title: 'Mariela Aguirre — Portfolio',
     description: 'Portfolio personal',
-    authors: [{ name: 'Mariela Aguirre', url: 'https://marielaaguirre.com' }],
+    authors: [{ name: 'Mariela Aguirre', url: 'https://aguirre2601.github.io/AguirreMarielaPortfolio/' }],
     keywords: ['portfolio', 'developer', 'designer', 'builder', 'mariela aguirre', 'full-stack', 'creative', 'innovative', 'web development', 'software engineering', 'UX/UI design', 'personal projects', 'tech blog'],
 }
 
@@ -44,9 +44,6 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="es"className={cn(satoshi.variable, ArraySemiBold.variable, "font-sans", geist.variable)}>
             <body className="">
-                <head>
-                    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-                </head>
                 <ThemeProvider>
                     <Header/>
                         <AosProvider children={children} />

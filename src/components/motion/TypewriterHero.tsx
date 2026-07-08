@@ -45,9 +45,9 @@ export default function TypewriterHero({ words = DEFAULT_WORDS , classname }: Ty
                 className=" "
             >
                 {/* Titular principal */}
-                <h2 className="leading-none tracking-tight backdrop-blur-sm backdrop-brightness-75 rounded-full w-fit ">
+                <h1 className="leading-none tracking-tight backdrop-blur-sm backdrop-brightness-75 rounded-full w-fit ">
                     <span className="text-foreground font-satoshi font-semibold   text-transparent bg-clip-text bg-linear-to-br from-white via-gray-300 to-white px-3 py-1.5 rounded-full text-sm md:text-lg lg:text-xl ">Hola, yo soy</span>
-                </h2>
+                </h1>
                 <h1 className="font-medium leading-none tracking-tight lg:text-7xl md:text-6xl text-4xl px-3">
                     {/* Contenedor del texto animado */}
                     <span className="relative flex items-baseline">
@@ -76,12 +76,12 @@ export default function TypewriterHero({ words = DEFAULT_WORDS , classname }: Ty
                     </span>
                 </h1>
                 <motion.div>
-                    <h3 className="tracking-[0.2em] px-3 py-1.5 font-semibold font-satoshi backdrop-blur-sm backdrop-brightness-75
-                    text-transparent bg-clip-text bg-linear-to-br from-white via-gray-200 to-white rounded-full normal-case text-sm  md:uppercase md:text-sm lg:text-base  ">Full Stack Developer | Data Analyst | Data Science Student </h3>
+                    <h2 className="tracking-[0.2em] px-3 py-1.5 font-semibold font-satoshi backdrop-blur-sm backdrop-brightness-75
+                    text-transparent bg-clip-text bg-linear-to-br from-white via-gray-200 to-white rounded-full normal-case text-sm  md:uppercase md:text-sm lg:text-base  ">Full Stack Developer | Data Analyst | Data Science Student </h2>
                 </motion.div>
                 <motion.div className="mt-3 px-2 py-1 font-semibold font-satoshi backdrop-blur-sm backdrop-brightness-75
                     text-transparent bg-clip-text bg-linear-to-br from-white via-gray-200 to-white rounded-full w-fit text-xs md:text-sm lg:text-base ">
-                    <p>Disponible para trabajar</p>
+                    <h3>Disponible para trabajar</h3>
                 </motion.div>
             </motion.div>
         </section>

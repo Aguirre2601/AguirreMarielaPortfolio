@@ -52,12 +52,12 @@ export default function SoftSkills() {
                         </div>
 
                         {/* Palabra Clave */}
-                        <h4 className="mb-2 font-semibold text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi text-xs sm:text-xs md:text-2xl   ">
+                        <h3 className="mb-2 font-semibold text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi text-xs sm:text-xs md:text-2xl   ">
                             {skill.title}
-                        </h4>
+                        </h3>
 
                         {/* Descripción Breve Técnica */}
-                        <p className="text-xs md:text-base text-gray-500 leading-relaxed">
+                        <p className="text-xs md:text-base text-white/70  leading-relaxed">
                             {skill.desc}
                         </p>
                     </div>

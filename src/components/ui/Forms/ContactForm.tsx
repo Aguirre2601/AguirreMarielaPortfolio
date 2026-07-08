@@ -37,13 +37,13 @@ export default function ContactForm() {
         }
     };
     return (
-        <div className="w-full max-w-xl mx-auto">
-            <form onSubmit={manejarEnvio} className="flex flex-col gap-4">
+        <div className="w-full max-w-9/10 mx-auto">
+            <form onSubmit={manejarEnvio} className="flex flex-col gap-4 p-4 ">
                 <input
                     name="name"
                     type="text"
                     placeholder={enviando ? "Sending..." : "Your full name here."}
-                    className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600 transition-colors relative z-12 pointer-events-auto w-full"
+                    className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600 transition-colors relative z-12 pointer-events-auto w-9/10"
                     required
                     disabled={enviando}
                 />
@@ -52,7 +52,7 @@ export default function ContactForm() {
                     name="email"
                     type="email"
                     placeholder={enviando ? "Sending..." : "Your email here."}
-                    className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600 transition-colors relative z-12 pointer-events-auto w-full"
+                    className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600 transition-colors relative z-12 pointer-events-auto w-9/10"
                     required
                     disabled={enviando}
                 />
@@ -61,7 +61,7 @@ export default function ContactForm() {
                     name="message"
                     placeholder={enviando ? "Sending..." : "Your message here."}
                     rows={5}
-                    className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600 transition-colors relative z-12 pointer-events-auto w-full resize-none"
+                    className="p-3 text-lg rounded-lg bg-black/40 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-600 transition-colors relative z-12 pointer-events-auto w-9/10 resize-none"
                     required
                     disabled={enviando}
                 />
@@ -69,22 +69,23 @@ export default function ContactForm() {
                 <button
                     type="submit"
                     disabled={enviando}
-                    className="px-6 py-3 text-lg rounded-lg border border-purple-600 text-white bg-purple-600/10 hover:bg-purple-600 transition-all font-medium relative z-12 pointer-events-auto w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="text-2xl  text-white transition-all  relative z-12 pointer-events-auto w-9/10 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed 
+                    hover:underline hover:underline-offset-8 hover:decoration-purple-600 hover:decoration-2 hover:cursor-pointer font-satoshi"
                 >
-                    {enviando ? "Sending message..." : "Send Message"}
+                    {enviando ? "Enviando Mensaje..." : "Enviar Mensaje"}
                 </button>
             </form>
 
             {/* Alertas de Estado estilizadas con Tailwind */}
             {estado === "success" && (
                 <p className="mt-4 text-emerald-400 font-medium text-lg animate-fade-in">
-                    ¡Thanks for reaching out! I will get back to you soon.
+                    ¡Gracias por comunicarte conmigo! Te respondere a la brevedad.
                 </p>
             )}
 
             {estado === "error" && (
                 <p className="mt-4 text-rose-400 font-medium text-lg animate-fade-in">
-                    Something went wrong. Please try again later.
+                    Ups! Algo salio mal. Por favor intenta mas tarde o comunicate por mis redes sociales.
                 </p>
             )}
         </div>

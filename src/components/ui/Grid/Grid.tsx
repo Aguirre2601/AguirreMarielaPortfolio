@@ -34,8 +34,15 @@ export default function Grid() {
                 <p className="text-xs sm:text-sm md:text-xl m-2 text-transparent bg-clip-text bg-linear-to-br from-slate-50 via-gray-400 to-slate-100 font-satoshi font-normal">Actualmente experimento con Python y proyectos personales, continuando mi capacitación y adquiriendo nuevos conocimientos.</p>
             </div>
             <GlowCard className="w-3 h-3 p-0.5 sm:w-13 sm:h-10 sm:p-1 md:w-20px md:h-20px md:p-3" > 
-                <div className="bg-transparent rounded-xl p-1 md:p-6  ">
-                    <span className="text-slate-400 text-sm sm:text-xs md:text-3xl ">FOTO</span>
+                <div className="bg-transparent rounded-xl p-1 md:p-6 relative select-none ">
+                    <img
+                    src="/src/assets/images/FINAL.png"
+                    alt="Foto de Mariela Aguirre sonriente"
+                    // Bloquea el clic derecho
+                    onContextMenu={(e) => e.preventDefault()}
+                    // Bloquea el arrastrar la imagen a otra pestaña o al escritorio
+                    onDragStart={(e) => e.preventDefault()}
+                    className="pointer-events-none"  />
                 </div>  
             </GlowCard>
 

@@ -232,15 +232,15 @@ export default function HomePage() {
                             </p>
                             <div className=" items-center justify-center mt-2 grid grid-cols-2 lg:grid-cols-4 ">
                                 {ImgJobs.map((img, index) => (
-                                <button className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
+                                <a className="m-5 hover:scale-120 hover:shadow-lg rounded-full p-4 pointer-events-auto cursor-pointer 
                                 transition-transform duration-300 hover:shadow-purple-600 hover:cursor-pointer shadow-lg  bg-gray-200 hover:bg-white"
-                                key={index}>
+                                key={index} href={img.url}>
                                     <img
                                     src={img.src}
                                     alt={img.alt}
                                     className="w-7 h-7 object-contain group-hover:scale-120 transition-transform duration-300"
                                     />
-                                </button>
+                                </a>
                                 ))}
                             </div>
                             <MiSeccionContacto/>
